@@ -28,6 +28,3 @@ mixin catalog-block(caption)
     .container.catalog-block__container
       h2.h2.catalog-block__caption=caption
       .catalog-block__row
-        each item in arr
-          +catalog-card(item.caption,true).catalog-block__card
-            +img(item.img,"jpg",285,370)
