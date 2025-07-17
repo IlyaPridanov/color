@@ -33,11 +33,6 @@ mixin catalog-card(caption,newCard)
   .catalog-card&attributes(attributes)
     .catalog-card__img
       block
-    if newCard
-      +card-flag("NEW").new.catalog-card__flag
-    else
-      +card-flag("SALE").sale.catalog-card__flag
-    +like-btn().catalog-card__like-btn
     .catalog-card__vendor Артикул: 2316
     .catalog-card__caption=caption
     form.catalog-card__basket-form(action="#")
@@ -53,4 +48,3 @@ mixin catalog-card(caption,newCard)
               label.catalog-card__size-label
                 input.visually-hidden(type="radio", checked=(index===0)?true:false, name="radio-size")
                 span.catalog-card__size-box=item
-          +color-radio().catalog-card__color-radio

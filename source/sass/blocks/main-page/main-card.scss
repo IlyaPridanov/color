@@ -1,7 +1,7 @@
 .section-card {
   margin-bottom: 45px;
 
-  @media screen and (max-width:576px) {
+  @media screen and (max-width: $mobile-width) {
     margin-bottom: 25px;
   }
 }
@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   margin-bottom: 34px;
 
-  @media screen and (max-width:576px) {
+  @media screen and (max-width: $mobile-width) {
     margin-bottom: 25px;
   }
 }
@@ -48,7 +48,7 @@
     }
   }
 
-  @media screen and (max-width:576px) {
+  @media screen and (max-width: $mobile-width) {
     margin: 0 auto 15px;
     max-width: 100%;
     flex-basis: 280px;

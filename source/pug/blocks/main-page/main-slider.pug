@@ -2,16 +2,15 @@ section.main-slider.slider
   .big-container.main-slider__big-container
     .swiper-container
       .swiper-wrapper
-        - for(let i=0;i<3;i++)
-          .swiper-slide.main-slider__slide(style="background-image:url('img/leaf.svg');")
+        - for(let i=0;i<6;i++)
+          .swiper-slide.main-slider__slide
+            +img("main-slider","jpg","1920","560")
             .container.main-slider__container
               .main-slider__column
-                h2.main-slider__caption Осенняя пора
-                p.main-slider__text Коллекция осень-зима 2021-2022
-              .main-slider__img
-                +img("main","png",337,590)
+                h2.main-slider__caption Краски
+                p.main-slider__text Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!
   button.main-slider__btn.js-btn-next(type="button")
-    +svg("left",29,24)
+    +svg("left",20,40)
   button.main-slider__btn.js-btn-prev(type="button")
-    +svg("left",29,24)
+    +svg("left",20,40)
   .main-slider__pagination.swiper-pagination

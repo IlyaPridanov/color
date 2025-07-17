@@ -52,7 +52,7 @@
     @include font(22px,500,1,$text-color);
     text-transform: uppercase;
 
-    @media screen and (max-width:576px) {
+    @media screen and (max-width: $mobile-width) {
       font-size: 20px;
     }
   }
@@ -68,7 +68,7 @@
   column-count: 2;
   padding: 22px 0 53px;
 
-  @media screen and (max-width:576px) {
+  @media screen and (max-width: $mobile-width) {
     column-fill: initial;
     column-count: initial;
     padding-bottom: 10px;
@@ -92,7 +92,7 @@
     color: $orange;
   }
 
-  @media screen and (max-width:576px) {
+  @media screen and (max-width: $mobile-width) {
     font-size: 14px;
   }
 }

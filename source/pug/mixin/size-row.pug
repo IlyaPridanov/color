@@ -1,6 +1,0 @@
-mixin size-row()
-  .size-row&attributes(attributes)
-    each item,index in ["62-68","68-74","74-80","80-86"]
-      label.size-row__size-label
-        input.visually-hidden(type="radio", name="filter-size", checked=(index===0)?true:false)
-        span=item
