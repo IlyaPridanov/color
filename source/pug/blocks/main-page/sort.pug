@@ -1,4 +1,29 @@
+-
+  const radio = [
+    {
+      id: "expensive",
+      name: "Сначала дорогие"
+    },
+    {
+      id: "cheap",
+      name: "Сначала недорогие"
+    },
+    {
+      id: "raiting",
+      name: "Сначала популярные"
+    },
+    {
+      id: "new",
+      name: "Сначала новые"
+    },
+  ]
+
 form(action="#").catalog-block__sort.sort
   button.h2.sort__button(type="button")
     |Сначала дорогие
     +svg("triangle",8,6)
+  .sort__popup
+    each item,index in radio
+      label
+        input.visually-hidden(id=item.id type="radio", name="sort", checked=index === 0)
+        span.h2.sort__name=item.name

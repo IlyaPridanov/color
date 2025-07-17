@@ -7,5 +7,6 @@
 //= modules/getHeaderMobile.js
 //= modules/getSlider.js
 //= modules/products.js
+//= modules/sortPopupToggle.js
 
 

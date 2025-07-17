@@ -8770,3 +8770,15 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
     });
   });
 })();
+(function () {
+  var sortPopup = document.querySelector('.sort__popup');
+  var sortButton = document.querySelector('.sort__button');
+  sortPopup.addEventListener('click', function (evt) {
+    if (evt.target === this) {
+      sortPopup.classList.remove('active');
+    }
+  });
+  sortButton.addEventListener('click', function (evt) {
+    sortPopup.classList.add('active');
+  });
+})();
