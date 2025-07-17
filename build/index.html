@@ -148,7 +148,7 @@
       </section>
       <section class="catalog-block">
         <div class="container catalog-block__row">
-          <div class="filter">
+          <form class="catalog-block__filter filter" action="#">
             <h2 class="h2 filter__caption">Фильтры</h2>
             <label>
               <input class="visually-hidden" id="new" type="checkbox" name="new"><span class="filter__toggle"></span><span class="filter__name">Новинки</span>
@@ -165,11 +165,18 @@
             <label>
               <input class="visually-hidden" id="sale" type="checkbox" name="sale"><span class="filter__toggle"></span><span class="filter__name">Распродажа</span>
             </label>
-          </div>
+          </form>
           <div class="catalog-block__column">
             <div class="catalog-block__caption-row">
               <h2 class="h2 catalog-block__caption"><span></span> товаров
               </h2>
+              <form class="catalog-block__sort sort" action="#">
+                <button class="h2 sort__button" type="button">Сначала дорогие
+                  <svg width="8" height="6">
+                    <use xlink:href="#icon-triangle"></use>
+                  </svg>
+                </button>
+              </form>
             </div>
             <div class="products" id="products"></div>
           </div>

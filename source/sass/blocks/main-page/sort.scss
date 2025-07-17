@@ -1,0 +1,6 @@
+.sort__button {
+  @include btn();
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
