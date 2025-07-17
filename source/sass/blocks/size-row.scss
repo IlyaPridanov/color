@@ -29,7 +29,7 @@
     border-color: $white;
     border-radius: 30px;
 
-    @media screen and (max-width:900px) {
+    @media screen and (max-width: $tablet-width) {
       font-size: 12px;
       border-color: rgba($text-color,0.5);
     }

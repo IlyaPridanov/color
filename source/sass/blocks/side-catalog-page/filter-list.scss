@@ -1,7 +1,7 @@
 .filter-list {
   padding: 29px 14px;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     padding-left: 23px;
     padding-right: 23px;
   }
@@ -20,7 +20,7 @@
     @include hover-text();
     @include font(12px,500,1.1,$text-color);
 
-    @media screen and (max-width:900px) {
+    @media screen and (max-width: $tablet-width) {
       font-size: 14px;
     }
   }
@@ -44,7 +44,7 @@
     color: $orange;
   }
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     font-size: 14px;
   }
 
@@ -57,7 +57,7 @@
     transform: rotate(0deg);
     transition: $transition;
 
-    @media screen and (max-width:900px) {
+    @media screen and (max-width: $tablet-width) {
       width: 13px;
       height: 9px;
     }

@@ -13,7 +13,7 @@
 
   background-color: $white;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     flex-wrap: wrap;
   }
 
@@ -54,7 +54,7 @@
 
   @include font(10px,400,1.1,$text-color);
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     font-size: 12px;
   }
 
@@ -80,7 +80,7 @@
     flex-basis: 300px;
   }
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     flex-basis: 100%;
   }
 }
@@ -89,7 +89,7 @@
   flex: 1 1 auto;
   padding: 0 40px;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     padding: 0;
     margin: 15px 0 25px;
   }

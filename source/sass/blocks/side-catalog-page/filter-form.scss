@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     padding-right: 22px;
   }
 }
@@ -11,7 +11,7 @@
   display: none;
   flex: 0 0 auto;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     @include btn();
     @include hover();
     @include center();
@@ -31,7 +31,7 @@
   align-items: center;
   padding: 15px 11px 14px 22px;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     @include no-hover();
   }
 
@@ -60,7 +60,7 @@
 
     opacity: 0;
 
-    @media screen and (max-width:900px) {
+    @media screen and (max-width: $tablet-width) {
       display: none;
     }
   }
@@ -76,7 +76,7 @@
 .filter-form__list {
   padding: 5px 13px 14px;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     padding-left: 23px;
     padding-right: 23px;
   }

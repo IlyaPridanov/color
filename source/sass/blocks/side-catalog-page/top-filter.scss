@@ -67,7 +67,7 @@
   display: none;
   flex: 0 0 auto;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     @include btn();
     @include hover();
 

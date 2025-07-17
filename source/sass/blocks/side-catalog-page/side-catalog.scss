@@ -9,13 +9,13 @@
     grid-template-columns: 260px 1fr;
   }
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     display: block;
   }
 }
 
 .side-catalog__bar {
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     display: none;
 
     position: fixed;
@@ -40,7 +40,7 @@
 
   background-color: rgba($white,0.5);
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     margin-bottom: 0;
 
     background-color: $white;

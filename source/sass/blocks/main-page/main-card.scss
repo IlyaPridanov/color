@@ -35,7 +35,7 @@
     margin-right: 0;
   }
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     flex-basis: calc((100% - 15px) / 2);
     margin-right: 15px;
 

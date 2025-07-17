@@ -22,7 +22,7 @@
 
     fill: $text-color;
 
-    @media screen and (max-width:900px) {
+    @media screen and (max-width: $tablet-width) {
       width: 13px;
       height: 9px;
     }
@@ -72,7 +72,7 @@
 .filter-item__check-name {
   @include font(10px,400,1,$black);
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     font-size: 12px;
   }
 }
@@ -150,7 +150,7 @@
 
       @include font(10px,400,1,$text-color);
 
-      @media screen and (max-width:900px) {
+      @media screen and (max-width: $tablet-width) {
         font-size: 12px;
       }
     }
@@ -160,7 +160,7 @@
 .filter-item__color {
   padding-bottom: 13px;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: $tablet-width) {
     justify-content: flex-start;
   }
 }

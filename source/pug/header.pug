@@ -19,6 +19,11 @@
 
 header.header
   .container.header__row
+    button(type="button", data-block="nav").hamburger.header__hamburger.js-btn
+      span.hamburger__bar.hamburger__bar--bar1
+      span.hamburger__bar.hamburger__bar--bar2
+      span.hamburger__bar.hamburger__bar--bar3
+      span.hamburger__bar.hamburger__bar--bar4
     a.header__logo(href="#")
       +img("logo","svg",131,26)
     include blocks/nav.pug
@@ -31,8 +36,3 @@ header.header
           a(href="#")
             +svg(item.name,item.width,item.height)
     button.header__basket-btn(type="button") 0
-    button(type="button", data-block="nav").hamburger.header__hamburger.js-btn
-      span.hamburger__bar.hamburger__bar--bar1
-      span.hamburger__bar.hamburger__bar--bar2
-      span.hamburger__bar.hamburger__bar--bar3
-      span.hamburger__bar.hamburger__bar--bar4

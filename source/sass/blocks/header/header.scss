@@ -9,12 +9,26 @@
   align-items: center;
   padding-top: 36px;
   padding-bottom: 39px;
+
+  @media screen and (max-width: $desktop-width) {
+    gap: 15px;
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    justify-content: space-between;
+  }
 }
 
 .header__logo {
   @include hover();
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: $mobile-width) {
+    flex: 0 0 105px;
+  }
 
 
   & img {
@@ -27,19 +41,20 @@
 .header__nav {
   margin-right: auto;
   margin-left: 9.5%;
+
+  @media screen and (max-width: $desktop-width) {
+    margin-left: auto;
+  }
 }
 
 .header__hamburger {
   display: none;
 
-  @media screen and (max-width: 900px) {
-    flex: 0 0 30px;
+  @media screen and (max-width: $tablet-width) {
+    flex: 0 0 auto;
     display: block;
-    margin-left: 9px;
-  }
-
-  @media screen and (max-width: 576px) {
-    margin-left: 5px;
+    margin-left: -4px;
+    margin-top: 5px;
   }
 }
 
@@ -48,6 +63,10 @@
   display: flex;
   align-items: center;
   gap: 26px;
+
+  @media screen and (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .header__icon-item {
@@ -68,12 +87,27 @@
   height: 24px;
   margin-left: 24px;
 
+  @include font(12px,500,1,$black);
+
   background-color: $green;
   border-radius: 50%;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-left: 0;
+  }
 }
 
 .header__phone-column {
+  flex: 0 0 auto;
   margin-right: 6.3%;
+
+  @media screen and (max-width: $desktop-width) {
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .header__phone {
