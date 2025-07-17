@@ -1,0 +1,18 @@
+.email-form
+  .container.email-form__container
+    form(action="#").email-form__form
+      .email-form__caption ПОДПИШИТЕСЬ НА E-MAIL РАССЫЛКУ И&nbsp;ПОЛУЧИТЕ СКИДКУ НА ПЕРВЫЙ ЗАКАЗ!
+      .email-form__column
+        input.email-form__email(type="email", placeholder="Ваш e-mail")
+        .email-form__check-block
+          label.email-form__label
+            input(type="checkbox", checked).visually-hidden
+            span.email-form__check-box
+              +svg("check",9,7)
+          p.email-form__check-text
+            !="Согласен на обработку персональных данных, с "
+            a(href="#") договором публичной оферты
+            !=" и "
+            a(href="#") политикой конфиденциальности
+            !=" ознакомлен и принимаю"
+      button.button.email-form__btn(type="submit") Подписаться

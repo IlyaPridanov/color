@@ -1,0 +1,49 @@
+mixin card(linkClass,list,newBaby)
+  -
+    const arr = [
+      "Верхняя одежда",
+      "Одежда из флиса",
+      "Головные уборы, шарфы",
+      "Чулочно-носочный ассортимент",
+      "Повседневная одежда",
+      "Аксессуары",
+     " Спорт, школа",
+      "Купальники, плавки",
+      "Белье, одежда для дома",
+      "Рукавицы, Перчатки",
+      "Обувь",
+      "Коллекции",
+      "Новинки",
+      "Распродажа",
+    ]
+
+    const arrNew = [
+      "Верхняя одежда",
+      "Товары для новорожденных",
+      "Повседневная одежда",
+      "Головные уборы, шарфы",
+      "Чулочно-носочный ассортимент",
+      "Аксессуары",
+      "Гигиена и уход",
+      "Игрушки",
+      "Для купания и ванны",
+      "Рукавицы, Перчатки",
+      "Детские горшки",
+      "Товары для кормления",
+      "Новинки",
+      "Распродажа",
+    ]
+
+  .card&attributes(attributes)
+    a(href="#", class=linkClass).card__link
+      block
+    if list
+      ul.card__list
+        if newBaby
+          each item,index in arrNew
+            li.card__item
+              a(href="#", class=(index===arr.length-2)?"green":"", class=(index===arr.length-1)?"orange":"").card__item-link=item
+        else
+          each item,index in arr
+            li.card__item
+              a(href="#", class=(index===arr.length-2)?"green":"", class=(index===arr.length-1)?"orange":"").card__item-link=item

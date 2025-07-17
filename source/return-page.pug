@@ -1,0 +1,14 @@
+extends pug/layout.pug
+block variables
+    - var title = 'Возврат'
+
+
+
+include pug/mixin.pug
+
+block content
+  main.main
+    +breadcrumbs([title])
+    .container
+      h1.h2=title
+      include pug/blocks/return-page/return.pug

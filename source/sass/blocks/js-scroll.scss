@@ -1,0 +1,30 @@
+.js-scroll {
+  position: relative;
+  overflow: hidden;
+
+  &:not(.ps--active-y) .ps__rail-y {
+    background: none;
+  }
+
+  & .ps__rail-y {
+    position: absolute;
+    left: auto !important;
+    right: 0;
+
+    width: 2px;
+    background-color: $bg-body;
+    border-radius: 1px;
+  }
+
+  & .ps__thumb-y {
+    cursor: pointer;
+
+    position: absolute;
+    right: 0;
+
+    width: 100%;
+
+    background-color: $text-color;
+    border-radius: inherit;
+  }
+}

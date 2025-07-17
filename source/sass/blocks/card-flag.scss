@@ -1,0 +1,17 @@
+.card-flag {
+  position: absolute;
+  left: 0;
+  top: 13px;
+
+  padding: 6px 11px 7px 12px;
+
+  @include font(14px,700,1,$white);
+
+  &.new {
+    background-color: $green;
+  }
+
+  &.sale {
+    background-color: $yellow-2;
+  }
+}

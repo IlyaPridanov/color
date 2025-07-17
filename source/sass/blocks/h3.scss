@@ -1,0 +1,9 @@
+.h3 {
+  margin: 0;
+
+  @include font(26px,600,1.2,$text-color);
+
+  @media screen and (max-width:576px) {
+    font-size: 22px;
+  }
+}

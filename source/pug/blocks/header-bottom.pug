@@ -1,0 +1,28 @@
+-
+  const arr = [
+    {
+      name: "heart",
+      width: "22",
+      height: "21",
+    },{
+      name: "user",
+      width: "20",
+      height: "20",
+    },{
+      name: "basket",
+      width: "17",
+      height: "20",
+    },
+  ]
+
+.header-bottom.header__bottom
+  include nav.pug
+  ul.header-bottom__list
+    each item,index in arr
+      li.header-bottom__item
+        a.header-bottom__link(href="#")
+          +svg(item.name,item.width,item.height)(class=item.name+"-icon")
+          if index === 0
+            span.value 1
+        if index === 2
+          include basket.pug

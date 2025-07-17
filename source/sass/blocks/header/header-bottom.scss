@@ -1,0 +1,87 @@
+.header-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom__list {
+  @include list();
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header-bottom__link {
+  position: relative;
+  @include center();
+
+  & .value {
+    position: absolute;
+    right: -5px;
+    top: -7px;
+
+    @include center();
+    width: 14px;
+    height: 14px;
+
+    @include font(8px,400,1,$text-color);
+
+    border-radius: 50%;
+    background-color: $yellow;
+  }
+
+  & svg {
+    fill: $grey-2;
+
+    @media screen and (max-width: 900px) {
+      &.user-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      &.basket-icon {
+        width: 21px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    cursor: pointer;
+
+    & svg {
+      fill: $white;
+    }
+  }
+}
+
+.header-bottom__item {
+  position: relative;
+  margin-left: 15px;
+
+  &:focus,
+  &:hover,
+  &:active {
+    & .header-bottom__basket-block {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-left: 6px;
+  }
+}
+
+.header-bottom__basket-block {
+  position: absolute;
+  z-index: 3;
+  right: 5px;
+  top: calc(100% - 3px);
+
+  display: none;
+
+  @media screen and (max-width: 576px) {
+    right: -35px;
+  }
+}

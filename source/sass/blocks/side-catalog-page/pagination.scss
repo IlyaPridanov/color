@@ -1,0 +1,60 @@
+.pagination {
+  margin-top: 5px;
+  margin-left: 4px;
+  margin-bottom: 107px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  & > * {
+    align-self: center;
+  }
+
+  @media screen and (max-width:1280px) {
+    margin-bottom: 67px;
+  }
+
+  @media screen and (max-width:1150px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width:576px) {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 50px;
+  }
+}
+
+.pagination__number-list {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width:576px) {
+    margin-bottom: 25px;
+    justify-content: center;
+  }
+}
+
+.pagination__number {
+  @include hover();
+  @include center();
+  @include btn();
+  width: 33px;
+  height: 33px;
+
+  @include font(18px,500,1,$text-color);
+
+  border-radius: 50%;
+
+  &.active {
+    @include no-hover();
+    color: $white;
+
+    background-color: $bg-head-foot;
+  }
+}
+
+.pagination__link {
+  width: 169px;
+  height: 43px;
+  margin: 0 auto;
+}

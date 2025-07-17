@@ -1,0 +1,28 @@
+form.side-catalog__bar-column.filter-form(action="#")
+  .filter-form__caption-row
+    button(type="button").filter-form__caption-btn.active
+      +svg("filter",22,22).filter
+      span Фильтр
+      +svg("min-arrow",11,7).arrow
+    button(type="button").filter-form__close-btn
+      +svg("close",23,23)
+  .filter-form__list
+    +filter-item("цена")
+      .filter-item__range.js-slider-range(data-min="0" data-max="10000" data-start="59" data-end="5400")
+    +filter-item("Размер")
+      +size-row().filter-item__size-row
+    +filter-item("Цвет")
+      +color-radio().filter-item__color
+    +filter-item("Утеплитель")
+      each item,index in ["без утеплителя","пух/перо","с утеплителем"]
+        label.filter-item__check-label
+          input.visually-hidden(type="checkbox", checked=(index===0)?true:false)
+          span.filter-item__check-box
+            +svg("check",9,6)
+          span.filter-item__check-name=item
+    +filter-item("Вид изделия")
+      +filter-radio("view",["Изделия из мембраны","Изделия не из мембраны"])
+    +filter-item("Сезон")
+      +filter-radio("season",["Зима","Лето","Демисезон"])
+    +filter-item("Sale/Новинка")
+      +filter-radio("sale",["Sale","Новинка"])

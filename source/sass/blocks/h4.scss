@@ -1,0 +1,7 @@
+.h4 {
+  @include font(22px,600,1.2,$black-2);
+
+  @media screen and (max-width:576px) {
+    font-size: 18px;
+  }
+}

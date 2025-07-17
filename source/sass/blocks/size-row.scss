@@ -1,0 +1,46 @@
+.size-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.size-row__size-label {
+  margin-right: 6px;
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width:1024px) {
+    margin-right: 3px;
+  }
+
+  & span {
+    @include center();
+    width: 57px;
+    height: 23px;
+    padding-top: 1px;
+
+    @include font(10px,400,1,$black-2);
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: $white;
+    border-radius: 30px;
+
+    @media screen and (max-width:900px) {
+      font-size: 12px;
+      border-color: rgba($text-color,0.5);
+    }
+  }
+
+  & input:checked + span {
+    background-color: $bg-filter-size;
+    border-color: $bg-filter-size;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

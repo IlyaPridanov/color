@@ -1,0 +1,10 @@
+form.top-filter(action="#")
+  .top-filter__caption Сортировать:
+  .top-filter__list
+    each item,index in ["По новизне","По скидкам","Цена по возрастанию","Цена по убыванию"]
+      label.top-filter__label
+        input(type="radio", name="top-filter", checked=(index===0)?true:false).visually-hidden
+        span=item
+  button.top-filter__open(type="button")
+    +svg("filter",22,22)
+    |Фильтр

@@ -1,0 +1,10 @@
+.button {
+  @include btn();
+  @include center();
+  @include hover();
+
+  @include font(12px,700,1,$text-color);
+  text-transform: uppercase;
+
+  border: 2px solid $bg-head-foot;
+}

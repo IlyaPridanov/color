@@ -1,0 +1,91 @@
+.filter-form__caption-row {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width:900px) {
+    padding-right: 22px;
+  }
+}
+
+.filter-form__close-btn {
+  display: none;
+  flex: 0 0 auto;
+
+  @media screen and (max-width:900px) {
+    @include btn();
+    @include hover();
+    @include center();
+
+    & svg {
+      fill: $text-color;
+    }
+  }
+}
+
+.filter-form__caption-btn {
+  @include btn();
+  @include hover();
+
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  padding: 15px 11px 14px 22px;
+
+  @media screen and (max-width:900px) {
+    @include no-hover();
+  }
+
+  & span {
+    @include font(14px,700,1.2,$black-2);
+    text-transform: uppercase;
+  }
+
+  & svg.filter {
+    display: block;
+    margin-right: 14px;
+
+    fill: $text-color;
+  }
+
+  & svg.arrow {
+    display: block;
+    width: 11px;
+    height: 7px;
+    margin-left: auto;
+
+    fill: $bg-head-foot;
+
+    transform: rotate(180deg);
+    transition: $transition;
+
+    opacity: 0;
+
+    @media screen and (max-width:900px) {
+      display: none;
+    }
+  }
+
+  &.active svg.arrow {
+    opacity: 1;
+
+    transform: rotate(0deg);
+    transition: $transition;
+  }
+}
+
+.filter-form__list {
+  padding: 5px 13px 14px;
+
+  @media screen and (max-width:900px) {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+}
+
+.filter-form__item {
+  border-top: 1px solid $bg-body;
+
+  &:first-child {
+    border: none;
+  }
+}

@@ -1,0 +1,149 @@
+-
+  const arr1 = [
+    {
+      caption: "Верхняя одежда",
+      arrLink: [
+        "Куртки",
+        "Пальто, Плащи",
+        "Брюки",
+        "Комбинезоны",
+        "Жилеты",
+      ],
+    },
+    {
+      caption: "Одежда из флиса",
+      arrLink: [
+        "Флисовые куртки",
+        "Флисовые брюки",
+        "Флисовые комбинезоны",
+      ]
+    },
+    {
+      caption: "Головные уборы, шарфы",
+      arrLink: [
+        "Банданы, Повязки",
+        "Кепки, панамы",
+        "Шапки",
+        "Шарфы, манишки",
+      ]
+    },
+    {
+      caption: "Чулочно-носочный ассортимент",
+      arrLink: [
+        "Носки",
+        "Колготки",
+      ]
+    },
+    {
+      caption: "Повседневная одежда",
+      arrLink: [
+        "Футболки",
+        "Водолазки",
+        "Шорты",
+        "Брюки",
+        "Джинсы",
+        "Комплекты",
+        "Комбинезоны, полукомбинезоны",
+        "Толстовки, джемперы",
+        "Жакеты, куртки",
+        "Рубашки",
+        "Жилеты",
+        "Вязаная одежда, для мальчиков",
+      ]
+    },
+    {
+      caption: "Аксессуары",
+      arrLink: [
+        "Рюкзаки, сумки",
+        "Галстуки, ремни, подтяжки",
+      ]
+    },
+    {
+      caption: "Спорт, школа",
+    },
+    {
+      caption: "Купальники, плавки",
+    },
+    {
+      caption: "Белье, одежда для дома",
+      arrLink: [
+        "Пижамы",
+        "Халаты",
+        "Трусы",
+        "Майки",
+        "Кальсоны",
+        "Бесшовное бельё",
+      ]
+    },
+    {
+      caption: "Рукавицы, Перчатки",
+      arrLink: [
+        "Рукавицы",
+        "Перчатки",
+      ]
+    },
+    {
+      caption: "Обувь",
+      arrLink: [
+        "Ботинки, кеды",
+        "Пантолеты",
+        "Сандали",
+        "Сапоги",
+      ]
+    },
+    {
+      caption: "Новинки",
+      green: true,
+    },
+    {
+      caption: "Распродажа",
+      orange: true,
+    },
+  ]
+
+  const arr2 = [
+    {
+      caption: "Коллекции",
+      arrLink: [
+        "№262 Динопарк",
+        "№258 Кемпинг в горах",
+        "№264 Лесной охотник",
+        "№1251 Динопарк",
+        "№256 Sport time",
+        "№1255 Горный поход",
+        "№254 Ралли",
+        "№270 Booo!",
+        "№1273 Полярная экспедиция",
+        "Спорт, школа",
+        "№122 Рок-музыка",
+        {
+          grey: true,
+          text: "Смотреть всё",
+        },
+      ],
+    },
+    {
+      caption: "Товары по росту",
+    },
+  ]
+
+.nav-block.nav__block
+  .nav-block__big-column
+    each item in arr1
+      a.nav-block__caption(href="#", class=item.green?"nav-block__caption--green":"", class=item.orange?"nav-block__caption--orange":"")=item.caption
+      if (item.arrLink)
+        ul.nav-block__list
+          each link in item.arrLink
+            li.nav-block__item
+              a.nav-block__link(href="#")=link
+  each item in arr2
+    .nav-block__column
+      a.nav-block__caption(href="#")=item.caption
+      if (item.arrLink)
+        ul.nav-block__list
+          each link in item.arrLink
+            li.nav-block__item
+              if (!link.grey)
+                a.nav-block__link(href="#")=link
+              else
+                a.nav-block__link(href="#", class="nav-block__link--grey")=link.text

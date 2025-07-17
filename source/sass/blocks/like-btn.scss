@@ -1,0 +1,21 @@
+.like-btn {
+  @include btn();
+
+  position: absolute;
+  z-index: 3;
+  top: 13px;
+  right: 10px;
+
+  & svg {
+    fill: $white;
+  }
+
+  &.active,
+  &:hover {
+    cursor: pointer;
+
+    & svg {
+      fill: $text-color;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.header-top.header__top
+  .header-top__caption
+    |Babyshop
+    <span>0 – 10 лет</span>
+  ul.header-top__list.js-block.js-block-inactive(data-block="question")
+    each item in ["Доставка и оплата","Возврат","Дисконтные программы","Контакты"]
+      li.header-top__item
+        a.header-top__link(href="#")!=item
+  form(action="#", data-block="search").header-top__search.js-block.js-block-inactive
+    input(type="search", placeholder="Поиск по сайту")
+    +svg("search",20,20)
+  a(href="tel:88005004030").header-top__tel
+    +svg("tel",16,16)
+    |8 800 500-40-30
+  a(href="#").header-top__map
+    +svg("map",14,17)
+    |Москва

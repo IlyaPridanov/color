@@ -1,0 +1,8 @@
+mixin filter-item(caption)
+  .filter-form__item.filter-item
+    button(type="button").filter-item__caption-btn.active
+      span=caption
+      +svg("min-arrow",11,7).arrow
+    .filter-item__block
+      block
+

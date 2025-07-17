@@ -1,0 +1,113 @@
+.nav {
+  @media screen and (max-width: 900px) {
+    padding-top: 15px;
+
+    background-color: $bg-nav-block;
+  }
+}
+
+.nav__list {
+  @include list();
+
+  display: flex;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+}
+
+.nav__item {
+  min-height: 76px;
+  margin-right: 21px;
+  @include center();
+
+  &:focus,
+  &:hover,
+  &:active {
+    & .nav__block {
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 9px;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: block;
+    min-height: 0;
+    padding: 10px 10px 20px 10px;
+  }
+}
+
+.nav__link {
+  @include font(14px,700,1,$white);
+  text-transform: uppercase;
+
+  & svg {
+    display: none;
+
+    fill: $white;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: $grey-2;
+  }
+
+  @media screen and (max-width: 900px) {
+    &,
+    &:focus,
+    &:hover,
+    &:active {
+      color: $text-color;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & svg {
+      display: block;
+
+      transform: rotate(180deg);
+      transition: $transition;
+    }
+
+    &.active {
+      & svg {
+        transform: rotate(0);
+        transition: $transition;
+      }
+    }
+  }
+}
+
+.nav__block {
+  display: none;
+
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 100%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    position: static;
+
+    display: flex;
+
+    transform: translateX(0);
+  }
+}

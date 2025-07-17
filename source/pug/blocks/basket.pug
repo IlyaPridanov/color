@@ -1,0 +1,32 @@
+-
+  const arr = [
+    {
+      caption: "Рамзер:",
+      value: "98-104",
+    },
+    {
+      caption: "Кол-во:",
+      value: "1",
+    },
+    {
+      caption: "Цвет:",
+      value: "<span class='green'></span>",
+    },
+  ]
+
+.basket.header-bottom__basket-block
+  .basket__block
+    .basket__caption Корзина
+    .basket__list.js-scroll
+      - for (let i = 0; i < 2; i++)
+        each src in ["card-2-2","big-card"]
+          .basket__card
+            .basket__img
+              +img(src,"jpg",57,74)
+            .basket__column
+              .basket__card-caption Куртка
+              dl.basket__dl
+                each item in arr
+                  dt!=item.caption
+                  dd!=item.value
+              .basket__cash 5 200 р.

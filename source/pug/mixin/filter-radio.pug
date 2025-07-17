@@ -1,0 +1,6 @@
+mixin filter-radio(name,arrRadio)
+  each item,index in arrRadio
+    label.filter-item__radio-label
+      input.visually-hidden(type="radio", name="filter"+name, checked=(index===0)?true:false)
+      span.filter-item__radio-box
+      span.filter-item__check-name=item

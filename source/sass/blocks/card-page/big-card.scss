@@ -1,0 +1,136 @@
+.big-card {
+  display: flex;
+  margin-top: 31px;
+  margin-bottom: 47px;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+}
+
+.big-card__img-column {
+  flex: 0 0 566px;
+  display: flex;
+
+  @media screen and (max-width: 1024px) {
+    flex-basis: 502px;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 25px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 576px) {
+    justify-content: flex-start;
+  }
+}
+
+.big-card__text-column {
+  flex: 0 0 calc(100% - 566px);
+  padding-left: 44px;
+
+  @media screen and (max-width: 1024px) {
+    flex: 0 0 calc(100% - 502px);
+    padding-left: 15px;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding-left: 0;
+  }
+}
+
+.big-card__container {
+  flex: 0 0 auto;
+  margin-right: 20px;
+
+  @media screen and (max-width: 576px) {
+    margin-right: 10px;
+  }
+}
+
+.big-card__big-img-container {
+  position: relative;
+  flex: 0 0 464px;
+  height: 590px;
+
+  @media screen and (max-width: 1024px) {
+    flex-basis: 400px;
+    height: 500px;
+  }
+
+  @media screen and (max-width: 576px) {
+    flex: 1 1 auto;
+    height: 361px;
+  }
+}
+
+.big-card__big-img {
+  position: relative;
+  @include hover();
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  transition: $transition;
+
+  &.inactive {
+    opacity: 0;
+    transition: $transition;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    @media screen and (max-width: 576px) {
+      object-position: center top;
+    }
+  }
+}
+
+.big-card__slide {
+  position: relative;
+  flex: 0 0 82px;
+  height: 110px;
+  margin-bottom: 16px;
+
+  & a {
+    @include hover();
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &.active::after {
+    content: "";
+    pointer-events: none;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid $bg-head-foot;
+  }
+}

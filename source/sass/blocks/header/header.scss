@@ -1,0 +1,126 @@
+.header {
+  background-color: $bg-head-foot;
+}
+
+.header__row {
+  position: relative;
+
+  display: flex;
+
+  @media screen and (max-width: 900px) {
+    align-items: center;
+  }
+}
+
+.header__logo {
+  @include hover();
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+
+  background-image: linear-gradient(90deg, #DAC0A5 0%, #E9D7C5 50.52%, #DAC0A5 100%);
+
+  @media screen and (max-width: 1024px) {
+    flex-basis: 90px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 15px 0;
+  }
+
+  @media screen and (max-width: 576px) {
+    flex-basis: 60px;
+    padding: 10px 0;
+  }
+
+  & img {
+    display: block;
+    width: 103px;
+    height: auto;
+
+    @media screen and (max-width: 1024px) {
+      width: 80px;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 60px;
+    }
+  }
+}
+
+.header__column {
+  flex: 0 0 calc(100% - 120px);
+  padding-left: 13px;
+
+  @media screen and (max-width: 1024px) {
+    flex: 0 0 calc(100% - 90px);
+  }
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+    flex: 1 0 auto;
+  }
+}
+
+.header__bottom {
+  @media screen and (max-width: 900px) {
+    margin-left: auto;
+  }
+}
+
+.header__top {
+  @media screen and (max-width: 900px) {
+    flex: 1 0 auto;
+  }
+}
+
+.header__hamburger {
+  display: none;
+
+  @media screen and (max-width: 900px) {
+    flex: 0 0 30px;
+    display: block;
+    margin-left: 9px;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-left: 5px;
+  }
+
+}
+
+.header__mobile-btn {
+  display: none;
+
+  @media screen and (max-width: 900px) {
+    @include btn();
+    @include center();
+    flex: 0 0 22px;
+    margin-left: 15px;
+
+    & svg {
+      fill: $grey-2;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      cursor: pointer;
+
+      & svg {
+        fill: $white;
+      }
+    }
+
+    &.js-btn-active {
+      & svg {
+        fill: $white;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-left: 6px;
+  }
+}

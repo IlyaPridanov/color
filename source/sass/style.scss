@@ -1,0 +1,64 @@
+// Vendor
+@import "vendor/swiper.scss";
+@import "vendor/magnific-popup.scss";
+
+// Global
+@import "variables.scss";
+@import "normalize.scss";
+@import "font.scss";
+@import "global.scss";
+@import "mixin.scss";
+
+// Blocks
+@import "blocks/container.scss";
+@import "blocks/button.scss";
+@import "blocks/input.scss";
+@import "blocks/h1.scss";
+@import "blocks/h2.scss";
+@import "blocks/h3.scss";
+@import "blocks/h4.scss";
+@import "blocks/js-block.scss";
+@import "blocks/js-scroll.scss";
+
+@import "blocks/hamburger.scss";
+
+@import "blocks/header/header.scss";
+@import "blocks/header/header-top.scss";
+@import "blocks/header/header-bottom.scss";
+@import "blocks/header/nav.scss";
+@import "blocks/header/basket.scss";
+@import "blocks/header/nav-block.scss";
+
+@import "blocks/footer.scss";
+
+@import "blocks/breadcrumbs.scss";
+
+@import "blocks/popup.scss";
+
+@import "blocks/card.scss";
+
+@import "blocks/main-page/main-slider.scss";
+@import "blocks/main-page/main-card.scss";
+
+@import "blocks/color-radio.scss";
+@import "blocks/catalog-block.scss";
+@import "blocks/catalog-card.scss";
+@import "blocks/email-form.scss";
+@import "blocks/text-block.scss";
+@import "blocks/size-row.scss";
+@import "blocks/card-flag.scss";
+@import "blocks/like-btn.scss";
+
+@import "blocks/side-catalog-page/side-catalog.scss";
+@import "blocks/side-catalog-page/filter-form.scss";
+@import "blocks/side-catalog-page/filter-item.scss";
+@import "blocks/side-catalog-page/filter-list.scss";
+@import "blocks/side-catalog-page/top-filter.scss";
+@import "blocks/side-catalog-page/side-catalog-row.scss";
+@import "blocks/side-catalog-page/pagination.scss";
+@import "blocks/side-catalog-page/side-catalog-text.scss";
+
+@import "blocks/card-page/big-card.scss";
+@import "blocks/card-page/card-text.scss";
+
+@import "blocks/lookbook-page/lookbook.scss";

@@ -1,0 +1,153 @@
+.catalog-card {
+  position: relative;
+  &:hover {
+    & .catalog-card__hover-block {
+      z-index: 2;
+      opacity: 1;
+      -webkit-transition: opacity 0.2s ease-out 0s;
+      -moz-transition: opacity 0.2s ease-out 0s;
+      -o-transition: opacity 0.2s ease-out 0s;
+      transition: opacity 0.2s ease-out 0s;
+    }
+  }
+}
+
+.catalog-card__img {
+  width: 100%;
+  height: 370px;
+  margin-bottom: 16px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  @media screen and (max-width:768px) {
+    height: 350px;
+  }
+}
+
+.catalog-card__vendor {
+  margin-bottom: 10px;
+
+  @include font(14px,400,1,$grey-3);
+}
+
+.catalog-card__caption {
+  margin-bottom: 11px;
+
+  @include font(18px,500,1,$text-color);
+}
+
+.catalog-card__basket-form {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+}
+
+.catalog-card__value {
+  margin-right: 25px;
+
+  @include font(22px,600,1,$text-color);
+}
+
+.catalog-card__btn {
+  @include btn();
+  display: flex;
+  align-items: center;
+
+  @include font(10px,700,1,$text-color);
+  text-transform: uppercase;
+
+  & svg {
+    display: block;
+    margin-right: 9px;
+
+    fill: $text-color;
+  }
+
+  & span {
+    margin-top: 4px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    color: $brown;
+
+    & svg {
+      fill: $brown;
+    }
+  }
+}
+
+.catalog-card__hover-block {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  top: 0;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 48px);
+  -webkit-transition: opacity 0.2s ease-out 0s;
+  -moz-transition: opacity 0.2s ease-out 0s;
+  -o-transition: opacity 0.2s ease-out 0s;
+  transition: opacity 0.2s ease-out 0s;
+}
+
+.catalog-card__radio-block {
+  padding: 18px 0;
+
+  background-color: rgba($white,0.8);
+}
+
+.catalog-card__radio-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &:first-child {
+    margin-bottom: 10px;
+  }
+}
+
+.catalog-card__size-label {
+  @include hover();
+  margin: 2px 3px;
+
+  @include font(10px,400,1,$black-2);
+
+  & input:checked + .catalog-card__size-box {
+    background-color: $grey-2;
+  }
+}
+
+.catalog-card__basket-link {
+  @include hover-text();
+  @include center();
+  padding: 14px 32px;
+  margin: auto auto 33%;
+
+  @include font(10px,700,1,$black-2);
+  text-transform: uppercase;
+
+  background-color: rgba($white,0.7);
+}
+
+.catalog-card__size-box {
+  @include center();
+  padding: 5px 13px 4px;
+
+  @include font(10px,400,1,$black-2);
+  white-space: nowrap;
+
+  background-color: $white;
+  border-radius: 30px;
+  border: 2px solid $grey-2;
+}
