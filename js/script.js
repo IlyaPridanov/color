@@ -8763,8 +8763,10 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   }).then(function (products) {
     console.log(products); // Выведет массив товаров
     var container = document.getElementById('products');
+    var catalogBlockCaption = document.querySelector('.catalog-block__caption span');
+    catalogBlockCaption.textContent = products.length;
     products.forEach(function (product) {
-      container.innerHTML += "\n        <div class=\"product__card\">\n          <div class=\"product__img\">\n            <img src=\"".concat(product.image, "\" alt=\"").concat(product.name, "\">\n          </div>\n          <h3>").concat(product.name, "</h3>\n          <div class=\"product__price-row\">\n            <p>\u0426\u0435\u043D\u0430: ").concat(product.price, " \u0440\u0443\u0431.</p>\n          </div>\n        </div>\n      ");
+      container.innerHTML += "\n        <div class=\"product__card\" id=\"".concat(product.id, "\">\n          <div class=\"product__img\">\n            <img src=\"").concat(product.image, "\" alt=\"").concat(product.name, "\">\n          </div>\n          <h3 class=\"h3\">\u041A\u0440\u0430\u0441\u043A\u0430 ").concat(product.name, "</h3>\n          <div class=\"product__price-row\">\n            <p>").concat(product.price, " \u20BD</p>\n            <button type=\"button\">+</button>\n          </div>\n        </div>\n      ");
     });
   });
 })();
