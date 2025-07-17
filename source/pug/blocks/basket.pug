@@ -1,32 +1,29 @@
--
-  const arr = [
-    {
-      caption: "Рамзер:",
-      value: "98-104",
-    },
-    {
-      caption: "Кол-во:",
-      value: "1",
-    },
-    {
-      caption: "Цвет:",
-      value: "<span class='green'></span>",
-    },
-  ]
-
-.basket.header-bottom__basket-block
+.basket.header__basket
   .basket__block
-    .basket__caption Корзина
-    .basket__list.js-scroll
-      - for (let i = 0; i < 2; i++)
-        each src in ["card-2-2","big-card"]
-          .basket__card
-            .basket__img
-              +img(src,"jpg",57,74)
-            .basket__column
-              .basket__card-caption Куртка
-              dl.basket__dl
-                each item in arr
-                  dt!=item.caption
-                  dd!=item.value
-              .basket__cash 5 200 р.
+    .basket__top-row
+      h2.h2.basket__caption Корзина
+      button(type="button").basket__close
+        +svg("close",24,24)
+    .basket__reset-row
+      span 4 товара
+      button(type="button").basket__reset очистить список
+    ul.basket__list
+      - for(let i=1;i<4;i++)
+        li.basket__item(id=i)
+          .basket__img
+            +img("color/color-1","jpg",96,96)
+          .basket__text-column
+            a(href="#").basket__item-link Краска Wallquest, Brownsone MS90102
+            .basket__item-value 9600 ₽
+          .basket__button-column
+            button(type="button").basket__item-plus +
+            span.basket__item-sum 2
+            button(type="button").basket__item-minus -
+          button(type="button").basket__delete
+            +svg("close",24,24).delete-icon
+            +svg("return",24,24).return-icon
+    .basket__result-row
+      .basket__result
+        |Итого
+        span 14 400₽
+      button(type="button").basket__order Оформить заказ

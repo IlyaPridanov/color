@@ -1,7 +1,6 @@
 .h2 {
   margin: 0;
 
-  @include font(12px,500,1,$black);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  @include font(30px,500,1,$black);
+  letter-spacing: -0.03em;
 }

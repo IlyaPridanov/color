@@ -19,11 +19,11 @@
   ]
 
 form(action="#").catalog-block__sort.sort
-  button.h2.sort__button(type="button")
+  button.h3.sort__button(type="button")
     |Сначала дорогие
     +svg("triangle",8,6)
   .sort__popup
     each item,index in radio
       label
         input.visually-hidden(id=item.id type="radio" name="sort" checked=!index)
-        span.h2.sort__name=item.name
+        span.h3.sort__name=item.name
