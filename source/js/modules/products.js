@@ -11,16 +11,19 @@
   .then(products => {
     console.log(products); // Выведет массив товаров
     const container = document.getElementById('products');
+    const catalogBlockCaption = document.querySelector('.catalog-block__caption span');
+    catalogBlockCaption.textContent = products.length;
 
     products.forEach(product => {
       container.innerHTML += `
-        <div class="product__card">
+        <div class="product__card" id="${product.id}">
           <div class="product__img">
             <img src="${product.image}" alt="${product.name}">
           </div>
-          <h3>${product.name}</h3>
+          <h3 class="h3">Краска ${product.name}</h3>
           <div class="product__price-row">
-            <p>Цена: ${product.price} руб.</p>
+            <p>${product.price} ₽</p>
+            <button type="button">+</button>
           </div>
         </div>
       `;

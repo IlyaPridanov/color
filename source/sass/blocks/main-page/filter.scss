@@ -1,0 +1,64 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 146px;
+
+  @media screen and (max-width: $big-desktop-width) {
+    padding-right: 7.6vw;
+  }
+
+  & label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  & input:checked + .filter__toggle {
+    background-color: $green;
+    transition: $transition;
+
+    &::after {
+      left: auto;
+      right: 7px;
+
+      transition: $transition;
+    }
+  }
+}
+
+.filter__name {
+  @include font(12px, 400, 1, $black);
+  text-transform: uppercase;
+}
+
+.filter__toggle {
+  position: relative;
+
+  display: block;
+  width: 36px;
+  height: 22px;
+
+  border-radius: 40px;
+  background-color: $grey;
+  transition: $transition;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: 7px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: $transition;
+
+    display: block;
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background-color: $black;
+  }
+}

@@ -114,8 +114,6 @@
     margin: 0;
     padding: 0;
     flex: 0 0 calc(100% - 45px);
-
-    @include font(12px,400,1.5,$grey-3);
   }
 
   & dd {

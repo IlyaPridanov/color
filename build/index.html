@@ -67,6 +67,8 @@
 <path d="M15.1544 17.0041H15.0499C2.96169 16.3089 1.24535 6.10932 1.00543 2.99654C0.967931 2.50855 1.12581 2.02565 1.44433 1.65406C1.76286 1.28246 2.21594 1.05261 2.70393 1.01506C2.75273 1.01137 2.80174 1.00952 2.85095 1.00952H6.09292C6.33934 1.00928 6.58014 1.08304 6.78415 1.22124C6.98816 1.35944 7.14598 1.55572 7.23715 1.78464L8.17221 4.0854C8.26224 4.30904 8.28459 4.55421 8.23646 4.79044C8.18834 5.02668 8.07188 5.24357 7.90154 5.41417L6.59121 6.7368C6.79506 7.90029 7.35181 8.97295 8.18595 9.8093C9.0201 10.6456 10.0913 11.2052 11.2542 11.4121L12.5892 10.0895C12.7623 9.92104 12.9813 9.80729 13.2187 9.76243C13.4561 9.71758 13.7014 9.74361 13.9241 9.83728L16.2433 10.7662C16.4688 10.8602 16.6611 11.0193 16.7959 11.2231C16.9307 11.4268 17.0017 11.6661 17 11.9104V15.1585C17 15.648 16.8055 16.1174 16.4594 16.4635C16.1133 16.8096 15.6439 17.0041 15.1544 17.0041ZM2.85095 2.23987C2.77017 2.23963 2.69012 2.2553 2.61539 2.28599C2.54067 2.31668 2.47271 2.36179 2.41542 2.41875C2.35812 2.4757 2.3126 2.54338 2.28147 2.61792C2.25033 2.69247 2.23417 2.77241 2.23393 2.8532C2.23393 2.87043 2.23455 2.88745 2.23578 2.90426C2.51876 6.54609 4.33352 15.1585 15.1175 15.7737C15.2804 15.7835 15.4404 15.7282 15.5624 15.62C15.6845 15.5117 15.7586 15.3595 15.7684 15.1967L15.7696 15.1585V11.9104L13.4504 10.9815L11.6849 12.7347L11.3896 12.6978C6.03756 12.0273 5.31165 6.67528 5.31165 6.61992L5.27474 6.32463L7.02184 4.55908L6.09907 2.23987H2.85095Z" stroke="white" stroke-width="0.1"></path>
 </symbol><symbol id="icon-tg" viewBox="0 0 24 24">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM9.7998 17.5C10.0917 17.5 10.225 17.3702 10.3862 17.2132L11.8412 15.7984L14.8401 18.014C15.392 18.3185 15.7903 18.1609 15.9277 17.5017L17.8962 8.22539C18.0978 7.41737 17.5882 7.05089 17.0603 7.29057L5.50128 11.7477C4.71227 12.0641 4.71687 12.5043 5.35746 12.7005L8.32376 13.6263L15.1911 9.2938C15.5152 9.09721 15.8128 9.2029 15.5686 9.41964L10.0043 14.4409L9.7998 17.5Z"></path>
+</symbol><symbol id="icon-triangle" viewBox="0 0 8 5">
+<path d="M4 4.5L7.4641 0L0.535898 0L4 4.5Z" fill="#202020"></path>
 </symbol><symbol id="icon-user" viewBox="0 0 22 22">
 <g clip-path="url(#clip0_8_30)">
 <circle cx="11" cy="23" r="8.4" stroke="black" stroke-width="1.2"></circle>
@@ -145,12 +147,32 @@
         <div class="main-slider__pagination swiper-pagination"></div>
       </section>
       <section class="catalog-block">
-        <div class="catalog-block__column">
-          <div class="catalog-block__caption-row">
-            <h2 class="catalog-block__caption"><span></span> товаров
-            </h2>
+        <div class="container catalog-block__row">
+          <div class="filter">
+            <h2 class="h2 filter__caption">Фильтры</h2>
+            <label>
+              <input class="visually-hidden" id="new" type="checkbox" name="new"><span class="filter__toggle"></span><span class="filter__name">Новинки</span>
+            </label>
+            <label>
+              <input class="visually-hidden" id="stock" type="checkbox" name="stock"><span class="filter__toggle"></span><span class="filter__name">Есть в наличии</span>
+            </label>
+            <label>
+              <input class="visually-hidden" id="contract" type="checkbox" name="contract"><span class="filter__toggle"></span><span class="filter__name">Контрактные</span>
+            </label>
+            <label>
+              <input class="visually-hidden" id="exclusive" type="checkbox" name="exclusive"><span class="filter__toggle"></span><span class="filter__name">Эксклюзивные</span>
+            </label>
+            <label>
+              <input class="visually-hidden" id="sale" type="checkbox" name="sale"><span class="filter__toggle"></span><span class="filter__name">Распродажа</span>
+            </label>
           </div>
-          <div class="products" id="products"></div>
+          <div class="catalog-block__column">
+            <div class="catalog-block__caption-row">
+              <h2 class="catalog-block__caption"><span></span> товаров
+              </h2>
+            </div>
+            <div class="products" id="products"></div>
+          </div>
         </div>
       </section>
     </main>

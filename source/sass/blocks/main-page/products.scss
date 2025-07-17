@@ -7,7 +7,42 @@
 
 .product__card {
   display: grid;
-  gap: 10px;
+  gap: 16px;
   grid-template-rows: subgrid;
   grid-row: span 3;
+}
+
+.product__img {
+  @include center();
+  width: 100%;
+  height: 278px;
+
+  & img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.product__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & button {
+    @include btn();
+    @include center();
+    width: 80px;
+    height: 32px;
+
+    @include font(16px,600,1,$black);
+    background-color: $green;
+    border-radius: 8px;
+  }
+
+  & p {
+    margin: 0;
+
+    @include font(16px,600,1,$black);
+  }
 }
