@@ -13,7 +13,7 @@
     margin: 0;
     padding-right: 9px;
 
-    @include font(16px,400,1.5,$black-2);
+    @include font(16px,400,1.5,$black);
 
     @media screen and (max-width:576px) {
       margin-right: 0;

@@ -6,10 +6,9 @@
   position: relative;
 
   display: flex;
-
-  @media screen and (max-width: 900px) {
-    align-items: center;
-  }
+  align-items: center;
+  padding-top: 36px;
+  padding-bottom: 39px;
 }
 
 .header__logo {
@@ -25,10 +24,9 @@
   }
 }
 
-.header__top {
-  @media screen and (max-width: 900px) {
-    flex: 1 0 auto;
-  }
+.header__nav {
+  margin-right: auto;
+  margin-left: 9.5%;
 }
 
 .header__hamburger {
@@ -43,5 +41,53 @@
   @media screen and (max-width: 576px) {
     margin-left: 5px;
   }
+}
 
+.header__icon-list {
+  @include list();
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.header__icon-item {
+  & a {
+    @include hover();
+  }
+
+  & svg {
+    fill: none;
+  }
+}
+
+.header__basket-btn {
+  @include hover();
+  @include btn();
+  @include center();
+  width: 24px;
+  height: 24px;
+  margin-left: 24px;
+
+  background-color: $green;
+  border-radius: 50%;
+}
+
+.header__phone-column {
+  margin-right: 6.3%;
+}
+
+.header__phone {
+  @include hover();
+  display: block;
+
+  @include font(16px,600,1,$black);
+  letter-spacing: 0.03em;
+}
+
+.header__order-call {
+  @include hover();
+  display: block;
+
+  @include font(14px,400,1,$black);
+  opacity: 0.6;
 }

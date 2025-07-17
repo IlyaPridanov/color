@@ -80,29 +80,31 @@
 </div>
     <header class="header">
       <div class="container header__row"><a class="header__logo" href="#"><img src="img/logo.svg" width="131" height="26" alt="logo"></a>
-        <nav class="nav js-block js-block-inactive" data-block="nav">
+        <nav class="header__nav nav js-block js-block-inactive" data-block="nav">
           <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link has-list active" href="#">Продукты</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Цвета</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Вдохновение</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Советы</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Найти магазин</a></li>
+            <li><a class="nav__link" href="#">Продукты</a></li>
+            <li><a class="nav__link" href="#">Цвета</a></li>
+            <li><a class="nav__link" href="#">Вдохновение</a></li>
+            <li><a class="nav__link" href="#">Советы</a></li>
+            <li><a class="nav__link" href="#">Найти магазин</a></li>
           </ul>
         </nav>
+        <div class="header__phone-column"><a class="header__phone" href="tel:+74952217769">+7 (495) 221-77-69</a><a class="header__order-call" href="/">Заказать звонок</a></div>
         <ul class="header__icon-list">
-          <li class="header__icon-item header__icon-item--heart"><a href="#">
-              <svg width="22" height="21">
-                <use xlink:href="#icon-heart"></use>
+          <li class="header__icon-item header__icon-item--search"><a href="#">
+              <svg width="22" height="22">
+                <use xlink:href="#icon-search"></use>
               </svg></a></li>
           <li class="header__icon-item header__icon-item--user"><a href="#">
               <svg width="20" height="20">
                 <use xlink:href="#icon-user"></use>
               </svg></a></li>
-          <li class="header__icon-item header__icon-item--search"><a href="#">
-              <svg width="22" height="22">
-                <use xlink:href="#icon-search"></use>
+          <li class="header__icon-item header__icon-item--heart"><a href="#">
+              <svg width="22" height="21">
+                <use xlink:href="#icon-heart"></use>
               </svg></a></li>
         </ul>
+        <button class="header__basket-btn" type="button">0</button>
         <button class="hamburger header__hamburger js-btn" type="button" data-block="nav"><span class="hamburger__bar hamburger__bar--bar1"></span><span class="hamburger__bar hamburger__bar--bar2"></span><span class="hamburger__bar hamburger__bar--bar3"></span><span class="hamburger__bar hamburger__bar--bar4"></span></button>
       </div>
     </header>

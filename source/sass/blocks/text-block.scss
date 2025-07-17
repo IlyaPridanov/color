@@ -27,7 +27,7 @@
   }
 
   & li {
-    @include font(16px,400,1.5,$black-2);
+    @include font(16px,400,1.5,$black);
 
     @media screen and (max-width:576px) {
       font-size: 14px;
@@ -76,7 +76,7 @@
 
   & p {
     margin: 0;
-    @include font(16px,400,1.5,$black-2);
+    @include font(16px,400,1.5,$black);
 
     & strong {
       font-weight: 700;
@@ -86,7 +86,7 @@
   & small {
     display: block;
     margin-bottom: 10px;
-    @include font(13px,400,1.5,$black-2);
+    @include font(13px,400,1.5,$black);
   }
 }
 

@@ -1,9 +1,9 @@
 -
   const arr = [
     {
-      name: "heart",
+      name: "search",
       width: "22",
-      height: "21",
+      height: "22",
     },
     {
       name: "user",
@@ -11,9 +11,9 @@
       height: "20",
     },
     {
-      name: "search",
+      name: "heart",
       width: "22",
-      height: "22",
+      height: "21",
     },
   ]
 
@@ -22,11 +22,15 @@ header.header
     a.header__logo(href="#")
       +img("logo","svg",131,26)
     include blocks/nav.pug
+    .header__phone-column
+      a.header__phone(href="tel:+74952217769") +7 (495) 221-77-69
+      a.header__order-call(href="/") Заказать звонок
     ul.header__icon-list
       each item,index in arr
         li(class="header__icon-item header__icon-item--"+item.name)
           a(href="#")
             +svg(item.name,item.width,item.height)
+    button.header__basket-btn(type="button") 0
     button(type="button", data-block="nav").hamburger.header__hamburger.js-btn
       span.hamburger__bar.hamburger__bar--bar1
       span.hamburger__bar.hamburger__bar--bar2

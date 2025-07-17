@@ -1,6 +1,6 @@
-nav.nav.js-block.js-block-inactive(data-block="nav")
+nav.header__nav.nav.js-block.js-block-inactive(data-block="nav")
   ul.nav__list
     each item,index in ["Продукты","Цвета","Вдохновение","Советы","Найти магазин"]
-      li.nav__item
-        a.nav__link(href="#", class=(index === 0)?"has-list active":"")
+      li
+        a.nav__link(href="#")
           !=item

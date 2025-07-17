@@ -36,7 +36,7 @@
   }
 
   & span {
-    @include font(14px,700,1.2,$black-2);
+    @include font(14px,700,1.2,$black);
     text-transform: uppercase;
   }
 

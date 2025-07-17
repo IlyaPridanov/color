@@ -9,7 +9,6 @@
 // Modules
 //= modules/scroll.js
 //= modules/getHeaderMobile.js
-//= modules/toggleNav.js
 //= modules/getSlider.js
 //= modules/filter-toggle.js
 //= modules/range-filter.js

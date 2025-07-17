@@ -9,7 +9,7 @@
   width: 100%;
 
   & span {
-    @include font(12px,700,1.2,$black-2);
+    @include font(12px,700,1.2,$black);
     text-transform: uppercase;
   }
 
@@ -70,7 +70,7 @@
 }
 
 .filter-item__check-name {
-  @include font(10px,400,1,$black-2);
+  @include font(10px,400,1,$black);
 
   @media screen and (max-width:900px) {
     font-size: 12px;

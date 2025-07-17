@@ -121,7 +121,7 @@
   @include hover();
   margin: 2px 3px;
 
-  @include font(10px,400,1,$black-2);
+  @include font(10px,400,1,$black);
 
   & input:checked + .catalog-card__size-box {
     background-color: $grey-2;
@@ -134,7 +134,7 @@
   padding: 14px 32px;
   margin: auto auto 33%;
 
-  @include font(10px,700,1,$black-2);
+  @include font(10px,700,1,$black);
   text-transform: uppercase;
 
   background-color: rgba($white,0.7);
@@ -144,7 +144,7 @@
   @include center();
   padding: 5px 13px 4px;
 
-  @include font(10px,400,1,$black-2);
+  @include font(10px,400,1,$black);
   white-space: nowrap;
 
   background-color: $white;

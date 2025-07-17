@@ -10,65 +10,18 @@
   @include list();
 
   display: flex;
+  align-items: center;
+  gap: 31px;
 
   @media screen and (max-width: 900px) {
     display: block;
-  }
-}
-
-.nav__item {
-  @include center();
-
-  @media screen and (max-width: 900px) {
-    display: block;
-    padding: 10px 10px 20px 10px;
   }
 }
 
 .nav__link {
-  @include font(14px,700,1,$black);
+  @include hover();
+  @include font(14px,400,1,$black);
   text-transform: uppercase;
-
-  & svg {
-    display: none;
-
-    fill: $white;
-  }
-
-  &:focus,
-  &:hover,
-  &:active {
-    cursor: pointer;
-    color: $grey-2;
-  }
-
-  @media screen and (max-width: 900px) {
-    &,
-    &:focus,
-    &:hover,
-    &:active {
-      color: $text-color;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & svg {
-      display: block;
-
-      transform: rotate(180deg);
-      transition: $transition;
-    }
-
-    &.active {
-      & svg {
-        transform: rotate(0);
-        transition: $transition;
-      }
-    }
-  }
+  letter-spacing: 0.01em;
 }
 
