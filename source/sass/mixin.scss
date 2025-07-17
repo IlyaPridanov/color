@@ -57,20 +57,13 @@
 }
 
 @mixin font($size , $weight ,$height, $color) {
-  font-family: $mon;
+  font-family: $inter;
   font-size: $size ;
   font-weight: $weight;
   line-height: $height;
   color: $color;
 }
 
-@mixin font-y($size , $weight ,$height, $color) {
-  font-family: $yan;
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $height;
-  color: $color;
-}
 
 
 

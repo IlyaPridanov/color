@@ -1,14 +1,32 @@
+-
+  const arr = [
+    {
+      name: "heart",
+      width: "22",
+      height: "21",
+    },
+    {
+      name: "user",
+      width: "20",
+      height: "20",
+    },
+    {
+      name: "search",
+      width: "22",
+      height: "22",
+    },
+  ]
+
 header.header
   .container.header__row
     a.header__logo(href="#")
-      +img("logo","png",103,108)
-    .header__column
-      include blocks/header-top.pug
-      include blocks/header-bottom.pug
-    button.header__mobile-btn.js-btn(type="button", data-block="question")
-      +svg("question",22,22)
-    button.header__mobile-btn.js-btn(type="button", data-block="search")
-      +svg("search",22,22)
+      +img("logo","svg",131,26)
+    include blocks/nav.pug
+    ul.header__icon-list
+      each item,index in arr
+        li(class="header__icon-item header__icon-item--"+item.name)
+          a(href="#")
+            +svg(item.name,item.width,item.height)
     button(type="button", data-block="nav").hamburger.header__hamburger.js-btn
       span.hamburger__bar.hamburger__bar--bar1
       span.hamburger__bar.hamburger__bar--bar2

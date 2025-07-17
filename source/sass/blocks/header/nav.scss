@@ -17,31 +17,16 @@
 }
 
 .nav__item {
-  min-height: 76px;
-  margin-right: 21px;
   @include center();
-
-  &:focus,
-  &:hover,
-  &:active {
-    & .nav__block {
-      display: flex;
-    }
-  }
-
-  @media screen and (max-width: 1200px) {
-    margin-right: 9px;
-  }
 
   @media screen and (max-width: 900px) {
     display: block;
-    min-height: 0;
     padding: 10px 10px 20px 10px;
   }
 }
 
 .nav__link {
-  @include font(14px,700,1,$white);
+  @include font(14px,700,1,$black);
   text-transform: uppercase;
 
   & svg {
@@ -87,27 +72,3 @@
   }
 }
 
-.nav__block {
-  display: none;
-
-  position: absolute;
-  z-index: 3;
-  left: 50%;
-  top: 100%;
-
-  transform: translateX(-50%);
-
-  width: calc(100% - 40px);
-
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 900px) {
-    position: static;
-
-    display: flex;
-
-    transform: translateX(0);
-  }
-}

@@ -1,10 +1,6 @@
-nav.nav.header-bottom__nav.js-block.js-block-inactive(data-block="nav")
+nav.nav.js-block.js-block-inactive(data-block="nav")
   ul.nav__list
-    each item,index in ["Мальчики","Девочки","Новорожденные","Беременные","Familylook","уход за малышом"]
+    each item,index in ["Продукты","Цвета","Вдохновение","Советы","Найти магазин"]
       li.nav__item
         a.nav__link(href="#", class=(index === 0)?"has-list active":"")
           !=item
-          if index === 0
-            +svg("min-arrow",13,8)
-        if index === 0
-          include nav-block.pug
