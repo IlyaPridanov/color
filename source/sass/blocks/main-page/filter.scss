@@ -28,6 +28,14 @@
   }
 }
 
+.filter__caption {
+  display: none;
+
+  @media screen and (max-width: $tablet-width) {
+    display: block;
+  }
+}
+
 .filter__name {
   @include font(12px, 400, 1, $black);
   text-transform: uppercase;

@@ -20,7 +20,7 @@
           <div class="product__img">
             <img src="${product.image}" alt="${product.name}">
           </div>
-          <h3 class="h3">Краска ${product.name}</h3>
+          <a href="/" class="h3 product__name">${product.name}</a>
           <div class="product__price-row">
             <p>${product.price} ₽</p>
             <button type="button">+</button>

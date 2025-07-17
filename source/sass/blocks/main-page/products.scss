@@ -1,15 +1,19 @@
 .products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
+  gap: 31px 24px;
   grid-template-rows: auto;
 }
 
 .product__card {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   grid-template-rows: subgrid;
   grid-row: span 3;
+
+  &:hover button {
+    opacity: 1;
+  }
 }
 
 .product__img {
@@ -30,6 +34,7 @@
   justify-content: space-between;
 
   & button {
+    cursor: pointer;
     @include btn();
     @include center();
     width: 80px;
@@ -38,6 +43,8 @@
     @include font(16px,600,1,$black);
     background-color: $green;
     border-radius: 8px;
+
+    opacity: 0;
   }
 
   & p {
@@ -45,4 +52,10 @@
 
     @include font(16px,600,1,$black);
   }
+}
+
+.product__name {
+  display: block;
+
+  @include font(16px,300,1,$black);
 }

@@ -1,3 +1,7 @@
+.catalog-block {
+  margin-bottom: 139px;
+}
+
 .catalog-block__row {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -7,3 +11,10 @@
   }
 }
 
+.catalog-block__caption-row {
+  margin-bottom: 45px;
+  padding-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
