@@ -1,1 +1,9 @@
-#products
+section.catalog-block
+  include filter.pug
+  .catalog-block__column
+    .catalog-block__caption-row
+      h2.catalog-block__caption
+        span
+        !=" товаров"
+      include sort.pug
+    include products.pug

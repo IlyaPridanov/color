@@ -1,0 +1,9 @@
+.catalog-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  @media screen and (max-width: $mobile-width) {
+    margin-bottom: 25px;
+  }
+}
+
