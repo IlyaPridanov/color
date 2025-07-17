@@ -25,5 +25,5 @@ form(action="#").catalog-block__sort.sort
   .sort__popup
     each item,index in radio
       label
-        input.visually-hidden(id=item.id type="radio", name="sort", checked=index === 0)
+        input.visually-hidden(id=item.id type="radio" name="sort" checked=!index)
         span.h2.sort__name=item.name
