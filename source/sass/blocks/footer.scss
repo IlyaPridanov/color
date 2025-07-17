@@ -23,7 +23,7 @@
     justify-content: space-between;
   }
 
-  @media screen and (max-width:1024px) {
+  @media screen and (max-width: $tablet-width) {
     justify-content: space-around;
   }
 
@@ -59,7 +59,7 @@
     flex-basis: 180px;
   }
 
-  @media screen and (max-width:1024px) {
+  @media screen and (max-width: $tablet-width) {
     flex-basis: 257px;
   }
 
