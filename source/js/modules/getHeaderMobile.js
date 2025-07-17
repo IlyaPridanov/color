@@ -1,8 +1,8 @@
 'use strict';
 
 (function () {
-    var btn = document.querySelectorAll('.js-btn');
-    var block = document.querySelectorAll('.js-block');
+    const btn = document.querySelectorAll('.js-btn');
+    const block = document.querySelectorAll('.js-block');
 
     btn.forEach(function (btnItem) {
         btnItem.addEventListener('click' , function() {

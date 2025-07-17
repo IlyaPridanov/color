@@ -8700,6 +8700,23 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 })();
 'use strict';
 (function () {
+  fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors')
+  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
+  // сначала дешевые
+  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
+  // сначала дорогие
+  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
+  // Например, новинки + сортировка по убыванию цены:
+  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
+  .then(function (response) {
+    return response.json();
+  }).then(function (products) {
+    console.log(products); // Выведет массив товаров
+    var container = document.getElementById('products');
+    products.forEach(function (product) {
+      container.innerHTML += "\n        <div class=\"product-card\">\n          <img src=\"".concat(product.image, "\" alt=\"").concat(product.name, "\">\n          <h3>").concat(product.name, "</h3>\n          <p>\u0426\u0435\u043D\u0430: ").concat(product.price, " \u0440\u0443\u0431.</p>\n        </div>\n      ");
+    });
+  });
   var sliderContainers = document.querySelectorAll('.slider');
   var getBlockSlider = function getBlockSlider(slider) {
     if (slider) {
