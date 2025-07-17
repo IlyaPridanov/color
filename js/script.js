@@ -8711,7 +8711,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
       var loop = true;
       var allowTouchMove = true;
       var direction = 'horizontal';
-      var autoHeight = false;
+      var autoHeight = true;
       var breakpoints = {
         320: {
           slidesPerView: 1,
