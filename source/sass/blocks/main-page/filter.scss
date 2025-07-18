@@ -36,7 +36,7 @@
 
 .filter__popup {
   @media screen and (max-width: $tablet-width) {
-    display: none;
+    display: flex;
 
     z-index: 1;
     position: fixed;
@@ -52,11 +52,15 @@
     height: 100%;
 
     background-color: rgba($black, 0.6);
+    transform: translateY(120%);
+    transition: $transition;
   }
 
   &.active {
     @media screen and (max-width: $tablet-width) {
-      display: flex;
+      // display: flex;
+      transform: translateY(0);
+      transition: $transition;
     }
   }
 }

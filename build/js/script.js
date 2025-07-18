@@ -8794,3 +8794,19 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
     filterPopup.classList.add('active');
   });
 })();
+(function () {
+  var basket = document.querySelector('.basket');
+  var basketButton = document.querySelector('.header__basket-btn');
+  var basketClose = document.querySelector('.basket__close');
+  basket.addEventListener('click', function (evt) {
+    if (evt.target === this) {
+      basket.classList.remove('active');
+    }
+  });
+  basketClose.addEventListener('click', function () {
+    basket.classList.remove('active');
+  });
+  basketButton.addEventListener('click', function () {
+    basket.classList.add('active');
+  });
+})();

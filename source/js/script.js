@@ -9,5 +9,6 @@
 //= modules/products.js
 //= modules/sortPopupToggle.js
 //= modules/filterPopupToggle.js
+//= modules/basketPopupToggle.js
 
 

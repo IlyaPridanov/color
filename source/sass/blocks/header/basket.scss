@@ -1,5 +1,4 @@
 .basket {
-  display: none;
   z-index: 3;
   position: fixed;
   top: 0;
@@ -11,9 +10,12 @@
   height: 100%;
 
   background-color: rgba($black-2,0.7);
+  transform: translateX(120%);
+  transition: $transition;
 
   &.active {
-    display: block;
+    transform: translateX(0);
+    transition: $transition;
   }
 }
 
@@ -29,10 +31,15 @@
   padding: 31px 40px 42px;
 
   background-color: $white;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 20px;
+  }
 }
 
 .basket__close {
   cursor: pointer;
+  @include hover();
   @include btn();
   @include center();
   width: 48px;
@@ -40,6 +47,10 @@
 
   border: 1px solid rgba($black-2,0.1);
   border-radius: 50%;
+
+  @media screen and (max-width: $mobile-width) {
+    gap: 5px;
+  }
 }
 
 .basket__top-row {
@@ -86,6 +97,12 @@
 
   border-top: 1px solid rgba($black-2,0.1);
 
+  @media screen and (max-width: $mobile-width) {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: auto 1fr auto;
+  }
+
   &.inactive {
     & .basket__img,
     & .basket__button-column,
@@ -113,6 +130,11 @@
 .basket__text-column {
   flex: 0 0 165px;
   margin-right: 3%;
+
+  @media screen and (max-width: $mobile-width) {
+    margin-right: 0;
+    align-self: center;
+  }
 }
 
 .basket__button-column {
@@ -121,11 +143,21 @@
   gap: 21px;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width: $mobile-width) {
+    grid-column: 1 / 2;
+    gap: 5px;
+  }
 }
 
 .basket__img {
   flex: 0 0 96px;
   height: 96px;
+  width: 96px;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 120px;
+  }
 
   & img {
     width: 100%;
@@ -155,6 +187,11 @@
   @include center();
   opacity: 0.4;
 
+  @media screen and (max-width: $mobile-width) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
   &:hover {
     opacity: 1;
   }
@@ -174,6 +211,10 @@
 
   @include font(16px, 300, 1, $black);
   letter-spacing: 0.04em;
+
+  @media screen and (max-width: $mobile-width) {
+    font-size: 14px;
+  }
 }
 
 .basket__result-row {
@@ -182,6 +223,13 @@
   justify-content: space-between;
 
   margin-top: auto;
+
+  @media screen and (max-width: $mobile-width) {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 }
 
 .basket__result {
@@ -209,4 +257,11 @@
   text-align: center;
 
   background-color: $green;
+}
+
+.basket__item-sum {
+  @media screen and (max-width: $mobile-width) {
+    flex: 1 0 30px;
+    text-align: center;
+  }
 }
