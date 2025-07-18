@@ -1,6 +1,31 @@
 (function () {
   const startUrl = 'https://6879163463f24f1fdca0cc4f.mockapi.io/colors';
   const checkbox = document.querySelectorAll('.filter input');
+  const sort = document.querySelectorAll('.sort input');
+
+  function buildSortUrl() {
+    const sortChecked = document.querySelector('.sort input:checked');
+    const comands = {
+      'expensive': 'sortBy=price&order=desc',
+      'cheap': 'sortBy=price&order=asc',
+      'raiting': 'sortBy=raiting&order=desc',
+      'date': 'sortBy=date&order=desc',
+    };
+
+    return comands[sortChecked.id];
+  }
+
+  function buildCheckedUrl(url) {
+    const checkboxes = document.querySelectorAll('.filter input:checked');
+    const params = [];
+
+    checkboxes.forEach(item => {
+      params.push(`${item.name}=true`);
+    });
+
+    return params.length ? `${url}?${params.join('&')}&${buildSortUrl()}` : `${url}?${buildSortUrl()}`;
+  }
+
 
   function getRendering (url) {
     fetch(url)
@@ -46,22 +71,17 @@
     });
   }
 
-  getRendering(startUrl);
-
-  function buildCheckedUrl(url) {
-    const checkboxes = document.querySelectorAll('.filter input:checked');
-    const params = [];
-
-    checkboxes.forEach(item => {
-      params.push(`${item.name}=true`);
-    });
-
-    return params.length ? `${url}?${params.join('&')}` : url;
-  }
+  getRendering(buildCheckedUrl(startUrl));
 
   checkbox.forEach((item) => {
     item.addEventListener('change', () => {
-      console.log(item.name);
+      getRendering(buildCheckedUrl(startUrl));
+    })
+  })
+
+  sort.forEach((item) => {
+    item.addEventListener('change', () => {
+      console.log(buildSortUrl());
       getRendering(buildCheckedUrl(startUrl));
     })
   })
