@@ -8750,31 +8750,51 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   });
 })();
 (function () {
-  fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors')
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
-  // сначала дешевые
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
-  // сначала дорогие
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
-  // Например, новинки + сортировка по убыванию цены:
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
-  .then(function (response) {
-    if (!response.ok) {
-      throw new Error("HTTP error! status: ".concat(response.status));
-    }
-    return response.json();
-  }).then(function (products) {
-    console.log(products); // Выведет массив товаров
-    var container = document.getElementById('products');
-    var catalogBlockCaption = document.querySelector('.catalog-block__caption span');
-    catalogBlockCaption.textContent = products.length;
-    products.forEach(function (product) {
-      container.innerHTML += "\n        <div class=\"product__card\" id=\"".concat(product.id, "\">\n          <div class=\"product__img\">\n            <img src=\"").concat(product.image, "\" alt=\"").concat(product.name, "\">\n          </div>\n          <a href=\"/\" class=\"product__name\">").concat(product.name, "</a>\n          <div class=\"product__price-row\">\n            <p>").concat(product.price, " \u20BD</p>\n            <button type=\"button\">+</button>\n          </div>\n        </div>\n      ");
+  var startUrl = 'https://6879163463f24f1fdca0cc4f.mockapi.io/colors';
+  var checkbox = document.querySelectorAll('.filter input');
+  function getRendering(url) {
+    fetch(url)
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
+    // сначала дешевые
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
+    // сначала дорогие
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
+    // Например, новинки + сортировка по убыванию цены:
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("HTTP error! status: ".concat(response.status));
+      }
+      return response.json();
+    }).then(function (products) {
+      console.log(products); // Выведет массив товаров
+      var container = document.getElementById('products');
+      var catalogBlockCaption = document.querySelector('.catalog-block__caption span');
+      catalogBlockCaption.textContent = products.length;
+      container.innerHTML = '';
+      products.forEach(function (product) {
+        container.innerHTML += "\n          <div class=\"product__card\" id=\"".concat(product.id, "\">\n            <div class=\"product__img\">\n              <img src=\"").concat(product.image, "\" alt=\"").concat(product.name, "\">\n            </div>\n            <a href=\"/\" class=\"product__name\">").concat(product.name, "</a>\n            <div class=\"product__price-row\">\n              <p>").concat(product.price, " \u20BD</p>\n              <button type=\"button\">+</button>\n            </div>\n          </div>\n        ");
+      });
+    }).catch(function (error) {
+      console.error('Error fetching data:', error);
+      var container = document.getElementById('products');
+      container.innerHTML = "<p class=\"error-message\">\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043F\u043E\u0437\u0436\u0435.</p>";
     });
-  }).catch(function (error) {
-    console.error('Error fetching data:', error);
-    var container = document.getElementById('products');
-    container.innerHTML = "<p class=\"error-message\">\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043F\u043E\u0437\u0436\u0435.</p>";
+  }
+  getRendering(startUrl);
+  function buildCheckedUrl(url) {
+    var checkboxes = document.querySelectorAll('.filter input:checked');
+    var params = [];
+    checkboxes.forEach(function (item) {
+      params.push("".concat(item.name, "=true"));
+    });
+    return params.length ? "".concat(url, "?").concat(params.join('&')) : url;
+  }
+  checkbox.forEach(function (item) {
+    item.addEventListener('change', function () {
+      console.log(item.name);
+      getRendering(buildCheckedUrl(startUrl));
+    });
   });
 })();
 (function () {
