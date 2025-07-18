@@ -233,50 +233,50 @@
         <div class="container catalog-block__row">
           <form class="catalog-block__filter filter" action="#">
             <h2 class="h3 filter__caption">Фильтры</h2>
-            <label>
-              <input class="visually-hidden" id="new" type="checkbox" name="new"><span class="filter__toggle"></span><span class="filter__name">Новинки</span>
-            </label>
-            <label>
-              <input class="visually-hidden" id="stock" type="checkbox" name="stock"><span class="filter__toggle"></span><span class="filter__name">Есть в наличии</span>
-            </label>
-            <label>
-              <input class="visually-hidden" id="contract" type="checkbox" name="contract"><span class="filter__toggle"></span><span class="filter__name">Контрактные</span>
-            </label>
-            <label>
-              <input class="visually-hidden" id="exclusive" type="checkbox" name="exclusive"><span class="filter__toggle"></span><span class="filter__name">Эксклюзивные</span>
-            </label>
-            <label>
-              <input class="visually-hidden" id="sale" type="checkbox" name="sale"><span class="filter__toggle"></span><span class="filter__name">Распродажа</span>
-            </label>
-          </form>
-          <div class="catalog-block__column">
-            <div class="catalog-block__caption-row">
-              <h2 class="h3 catalog-block__caption"><span></span> товаров
-              </h2>
-              <form class="catalog-block__sort sort" action="#">
-                <button class="h3 sort__button" type="button">Сначала дорогие
-                  <svg width="8" height="6">
-                    <use xlink:href="#icon-triangle"></use>
-                  </svg>
-                </button>
-                <div class="sort__popup">
-                  <label>
-                    <input class="visually-hidden" id="expensive" type="radio" name="sort" checked=""><span class="h3 sort__name">Сначала дорогие</span>
-                  </label>
-                  <label>
-                    <input class="visually-hidden" id="cheap" type="radio" name="sort"><span class="h3 sort__name">Сначала недорогие</span>
-                  </label>
-                  <label>
-                    <input class="visually-hidden" id="raiting" type="radio" name="sort"><span class="h3 sort__name">Сначала популярные</span>
-                  </label>
-                  <label>
-                    <input class="visually-hidden" id="new" type="radio" name="sort"><span class="h3 sort__name">Сначала новые</span>
-                  </label>
-                </div>
-              </form>
+            <div class="filter__block">
+              <label>
+                <input class="visually-hidden" id="new" type="checkbox" name="new"><span class="filter__toggle"></span><span class="filter__name">Новинки</span>
+              </label>
+              <label>
+                <input class="visually-hidden" id="stock" type="checkbox" name="stock"><span class="filter__toggle"></span><span class="filter__name">Есть в наличии</span>
+              </label>
+              <label>
+                <input class="visually-hidden" id="contract" type="checkbox" name="contract"><span class="filter__toggle"></span><span class="filter__name">Контрактные</span>
+              </label>
+              <label>
+                <input class="visually-hidden" id="exclusive" type="checkbox" name="exclusive"><span class="filter__toggle"></span><span class="filter__name">Эксклюзивные</span>
+              </label>
+              <label>
+                <input class="visually-hidden" id="sale" type="checkbox" name="sale"><span class="filter__toggle"></span><span class="filter__name">Распродажа</span>
+              </label>
             </div>
-            <div class="products" id="products"></div>
+          </form>
+          <div class="catalog-block__caption-row">
+            <h2 class="h3 catalog-block__caption"><span></span> товаров
+            </h2>
+            <form class="catalog-block__sort sort" action="#">
+              <button class="h3 sort__button" type="button">Сначала дорогие
+                <svg width="8" height="6">
+                  <use xlink:href="#icon-triangle"></use>
+                </svg>
+              </button>
+              <div class="sort__popup">
+                <label>
+                  <input class="visually-hidden" id="expensive" type="radio" name="sort" checked=""><span class="h3 sort__name">Сначала дорогие</span>
+                </label>
+                <label>
+                  <input class="visually-hidden" id="cheap" type="radio" name="sort"><span class="h3 sort__name">Сначала недорогие</span>
+                </label>
+                <label>
+                  <input class="visually-hidden" id="raiting" type="radio" name="sort"><span class="h3 sort__name">Сначала популярные</span>
+                </label>
+                <label>
+                  <input class="visually-hidden" id="new" type="radio" name="sort"><span class="h3 sort__name">Сначала новые</span>
+                </label>
+              </div>
+            </form>
           </div>
+          <div class="catalog-block__products products" id="products"></div>
         </div>
       </section>
     </main>
