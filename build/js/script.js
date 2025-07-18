@@ -8753,6 +8753,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   var startUrl = 'https://6879163463f24f1fdca0cc4f.mockapi.io/colors';
   var checkbox = document.querySelectorAll('.filter input');
   var sort = document.querySelectorAll('.sort input');
+  var sortValue = document.querySelector('.sort__button span');
   function buildSortUrl() {
     var sortChecked = document.querySelector('.sort input:checked');
     var comands = {
@@ -8772,21 +8773,13 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
     return params.length ? "".concat(url, "?").concat(params.join('&'), "&").concat(buildSortUrl()) : "".concat(url, "?").concat(buildSortUrl());
   }
   function getRendering(url) {
-    fetch(url)
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
-    // сначала дешевые
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
-    // сначала дорогие
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
-    // Например, новинки + сортировка по убыванию цены:
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
-    .then(function (response) {
+    fetch(url).then(function (response) {
       if (!response.ok) {
         throw new Error("HTTP error! status: ".concat(response.status));
       }
       return response.json();
     }).then(function (products) {
-      console.log(products); // Выведет массив товаров
+      console.log(products);
       var container = document.getElementById('products');
       var catalogBlockCaption = document.querySelector('.catalog-block__caption span');
       catalogBlockCaption.textContent = products.length;
@@ -8808,7 +8801,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   });
   sort.forEach(function (item) {
     item.addEventListener('change', function () {
-      console.log(buildSortUrl());
+      sortValue.textContent = item.dataset.name;
       getRendering(buildCheckedUrl(startUrl));
     });
   });

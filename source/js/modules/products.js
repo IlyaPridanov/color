@@ -2,6 +2,7 @@
   const startUrl = 'https://6879163463f24f1fdca0cc4f.mockapi.io/colors';
   const checkbox = document.querySelectorAll('.filter input');
   const sort = document.querySelectorAll('.sort input');
+  const sortValue = document.querySelector('.sort__button span');
 
   function buildSortUrl() {
     const sortChecked = document.querySelector('.sort input:checked');
@@ -29,13 +30,6 @@
 
   function getRendering (url) {
     fetch(url)
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
-    // сначала дешевые
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
-    // сначала дорогие
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
-    // Например, новинки + сортировка по убыванию цены:
-    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,7 +37,7 @@
       return response.json();
     })
     .then(products => {
-      console.log(products); // Выведет массив товаров
+      console.log(products);
       const container = document.getElementById('products');
       const catalogBlockCaption = document.querySelector('.catalog-block__caption span');
       catalogBlockCaption.textContent = products.length;
@@ -81,7 +75,7 @@
 
   sort.forEach((item) => {
     item.addEventListener('change', () => {
-      console.log(buildSortUrl());
+      sortValue.textContent = item.dataset.name;
       getRendering(buildCheckedUrl(startUrl));
     })
   })
