@@ -1,7 +1,7 @@
 .products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 31px 24px;
+  gap: 17px 24px;
   grid-template-rows: auto;
 
   @media screen and (max-width: $desktop-width) {
@@ -10,6 +10,7 @@
 
   @media screen and (max-width: $tablet-width) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px 16px;
   }
 
   @media screen and (max-width: $min-tablet-width) {
@@ -22,6 +23,33 @@
   gap: 18px;
   grid-template-rows: subgrid;
   grid-row: span 3;
+  padding-bottom: 14px;
+
+  &:nth-child(n+6) {
+    border-top: 1px solid rgba($black-2, 0.1);
+  }
+
+  @media screen and (max-width: $desktop-width) {
+    &:nth-child(n+5) {
+      border-top: 1px solid rgba($black-2, 0.1);
+    }
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    &:nth-child(n+4) {
+      border-top: 1px solid rgba($black-2, 0.1);
+    }
+  }
+
+  @media screen and (max-width: $min-tablet-width) {
+    &:nth-child(n+3) {
+      border-top: 1px solid rgba($black-2, 0.1);
+    }
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    padding-bottom: 33px;
+  }
 
   &:hover button {
     opacity: 1;
@@ -61,6 +89,11 @@
     border-radius: 8px;
 
     opacity: 0;
+
+    @media screen and (max-width: $tablet-width) {
+      width: 39px;
+      height: 27px;
+    }
   }
 
   & p {
@@ -75,4 +108,8 @@
 
   @include font(16px,300,1,$black);
   letter-spacing: 0.03em;
+
+  @media screen and (max-width: $tablet-width) {
+    line-height: 1.1;
+  }
 }

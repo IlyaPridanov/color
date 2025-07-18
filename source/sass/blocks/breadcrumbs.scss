@@ -16,8 +16,11 @@
   @media screen and (max-width: $tablet-width) {
     position: static;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin: 0 0 44px;
+    padding-top: 12px;
     width: 100%;
+
+    border-top: 1px solid rgba($black,0.06);
   }
 }
 
@@ -25,6 +28,10 @@
   position: relative;
 
   margin-right: 23px;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-right: 20px;
+  }
 
   &::after {
     content: "";
@@ -55,6 +62,10 @@
     @include font(10px,400,1,$grey-2);
     text-transform: uppercase;
     letter-spacing: -0.03em;
+
+    @media screen and (max-width: $tablet-width) {
+      letter-spacing: 0.05em;
+    }
   }
 
   & span {

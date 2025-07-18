@@ -1,5 +1,5 @@
 .catalog-block {
-  margin-bottom: 139px;
+  margin-bottom: 123px;
 }
 
 .catalog-block__row {
@@ -34,6 +34,7 @@
   @media screen and (max-width: $tablet-width) {
     padding-top: 0;
     justify-content: flex-end;
+    margin-bottom: 25px;
   }
 }
 
