@@ -24,8 +24,9 @@
 
 form(action="#").catalog-block__filter.filter
   h2.h3.filter__caption Фильтры
-  each item in checkbox
-    label
-      input.visually-hidden(id=item.id type="checkbox", name=item.id)
-      span.filter__toggle
-      span.filter__name=item.name
+  .filter__block
+    each item in checkbox
+      label
+        input.visually-hidden(id=item.id type="checkbox", name=item.id)
+        span.filter__toggle
+        span.filter__name=item.name

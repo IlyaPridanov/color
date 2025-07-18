@@ -11,10 +11,20 @@
   }
 }
 
+.catalog-block__products {
+  grid-column: 2 / 3;
+}
+
 .catalog-block__caption-row {
+  grid-column: 2 / 3;
   margin-bottom: 45px;
   padding-top: 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.catalog-block__filter {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }

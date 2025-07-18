@@ -1,4 +1,5 @@
 .basket {
+  display: none;
   z-index: 3;
   position: fixed;
   top: 0;
@@ -10,6 +11,10 @@
   height: 100%;
 
   background-color: rgba($black-2,0.7);
+
+  &.active {
+    display: block;
+  }
 }
 
 .basket__block {

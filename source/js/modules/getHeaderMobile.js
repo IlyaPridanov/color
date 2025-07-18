@@ -6,7 +6,7 @@
 
     btn.forEach(function (btnItem) {
         btnItem.addEventListener('click' , function() {
-            var t = this;
+            let t = this;
             btn.forEach(function (item) {
                 if (!(item === t)) {
                     item.classList.remove('js-btn-active');

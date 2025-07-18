@@ -1,7 +1,4 @@
 .filter {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   padding-right: 146px;
 
   @media screen and (max-width: $big-desktop-width) {
@@ -33,6 +30,22 @@
 
   @media screen and (max-width: $tablet-width) {
     display: block;
+  }
+}
+
+.filter__block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media screen and (max-width: $tablet-width) {
+    display: none;
+  }
+
+  &.active {
+    @media screen and (max-width: $tablet-width) {
+      display: flex;
+    }
   }
 }
 

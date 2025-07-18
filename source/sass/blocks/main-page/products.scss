@@ -3,6 +3,14 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 31px 24px;
   grid-template-rows: auto;
+
+  @media screen and (max-width: $desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .product__card {
