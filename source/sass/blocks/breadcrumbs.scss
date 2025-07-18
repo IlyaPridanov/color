@@ -1,45 +1,45 @@
 .breadcrumbs {
-  margin-top: 25px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: flex-start;
-
-  @media screen and (max-width: $mobile-width) {
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
+  position: relative;
 }
 
 .breadcrumbs__list {
-  @include list();
-  flex: 1 1 auto;
+  position: absolute;
+  z-index: 2;
+  top: 28px;
+  left: 24px;
 
+  @include list();
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-left: auto;
+
+  @media screen and (max-width: $tablet-width) {
+    position: static;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    width: 100%;
+  }
 }
 
 .breadcrumbs__item {
   position: relative;
 
-  margin-right: 44px;
-  margin-bottom: 5px;
+  margin-right: 23px;
 
   &::after {
     content: "";
     position: absolute;
     top: 55%;
-    right: -24px;
+    right: -11px;
 
     display: block;
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
 
     transform: translateY(-50%);
 
     border-radius: 50%;
-    background-color: $bg-head-foot;
+    background-color: $grey-2;
   }
 
   &:last-child {
@@ -52,31 +52,15 @@
 
   & a {
     @include hover();
-    @include font(12px,400,1,$text-color);
-    text-decoration: underline;
+    @include font(10px,400,1,$grey-2);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
   }
 
   & span {
-    @include font(12px,400,1,$bg-head-foot);
+    @include font(10px,400,1,$grey-2);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
   }
 }
 
-.breadcrumbs__nav {
-  flex: 0 0 auto;
-  display: block;
-  margin-left: 18px;
-  margin-bottom: 5px;
-  @include hover();
-  @include font(12px,400,1,$text-color);
-  text-decoration: underline;
-
-  @media screen and (max-width: $mobile-width) {
-    margin-left: 0;
-    margin-right: auto;
-    margin-top: 25px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}

@@ -6,6 +6,10 @@
   display: grid;
   grid-template-columns: auto 1fr;
 
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   @media screen and (max-width: $mobile-width) {
     margin-bottom: 25px;
   }
@@ -13,6 +17,10 @@
 
 .catalog-block__products {
   grid-column: 2 / 3;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-column: 1 / 3;
+  }
 }
 
 .catalog-block__caption-row {
@@ -22,9 +30,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: $tablet-width) {
+    padding-top: 0;
+    justify-content: flex-end;
+  }
+}
+
+.catalog-block__caption {
+  @media screen and (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .catalog-block__filter {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-row: 1 / 2;
+  }
 }

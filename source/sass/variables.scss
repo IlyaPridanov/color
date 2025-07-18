@@ -6,20 +6,14 @@ $text-color: $black;
 
 $white: #ffffff;
 
-$bg-body: #F3EDDD;
-$bg-head-foot: #DAC0A5;
-$bg-nav-block: #F8E8D1;
-$bg-filter-size: #FCFBF7;
-$footer-social: $bg-body;
 $transparent: rgba(256,256,256,0);
 
 $transition: all 0.3s ease-in;
 
-$border: 1px solid $bg-head-foot;
-
 $big-desktop-width: 1920px;
 $desktop-width: 1440px;
 $tablet-width: 1024px;
+$min-tablet-width: 768px;
 $mobile-width: 576px;
 
 $retina-dpi: 144dpi;
@@ -28,6 +22,7 @@ $retina-dppx: 1.5dppx;
 $blue: #1c3b73;
 
 $grey: #F2F2F2;
+$grey-2: #C4C4C4;
 
 $green: #7BB899;
 

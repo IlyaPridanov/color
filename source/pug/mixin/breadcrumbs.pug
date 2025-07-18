@@ -1,15 +1,12 @@
-mixin breadcrumbs(arrLink,nav)
+mixin breadcrumbs(arrLink)
   .container.breadcrumbs
     ul.breadcrumbs__list
       li.breadcrumbs__item
-        a(href="#") Главная
+        a(href="/") Главная
       each item,index in arrLink
         if index === (arrLink.length-1)
           li.breadcrumbs__item
             span=item
         else
           li.breadcrumbs__item
-            a(href="#")=item
-    if nav
-      a.breadcrumbs__nav(href="#") Предыдущий товар
-      a.breadcrumbs__nav(href="#") Следующий товар
+            a(href="/")=item

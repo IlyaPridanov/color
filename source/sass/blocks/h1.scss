@@ -3,7 +3,7 @@
 
   @include font(72px,400,1,$white);
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (max-width: $tablet-width) {
     font-size: 36px;
   }
 }
