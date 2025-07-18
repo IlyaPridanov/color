@@ -79,6 +79,4 @@
       getRendering(buildCheckedUrl(startUrl));
     })
   })
-
-
 })();
