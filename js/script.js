@@ -8773,6 +8773,8 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 (function () {
   var sortPopup = document.querySelector('.sort__popup');
   var sortButton = document.querySelector('.sort__button');
+  var btn = document.querySelector('.js-btn');
+  var block = document.querySelector('.js-block');
   sortPopup.addEventListener('click', function (evt) {
     if (evt.target === this) {
       sortPopup.classList.remove('active');
@@ -8780,11 +8782,15 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   });
   sortButton.addEventListener('click', function (evt) {
     sortPopup.classList.add('active');
+    btn.classList.remove('js-btn-active');
+    block.classList.add('js-block-inactive');
   });
 })();
 (function () {
   var filterPopup = document.querySelector('.filter__popup');
   var filterCaption = document.querySelector('.filter__caption');
+  var btn = document.querySelector('.js-btn');
+  var block = document.querySelector('.js-block');
   filterPopup.addEventListener('click', function (evt) {
     if (evt.target === this) {
       filterPopup.classList.remove('active');
@@ -8792,12 +8798,16 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   });
   filterCaption.addEventListener('click', function (evt) {
     filterPopup.classList.add('active');
+    btn.classList.remove('js-btn-active');
+    block.classList.add('js-block-inactive');
   });
 })();
 (function () {
   var basket = document.querySelector('.basket');
   var basketButton = document.querySelector('.header__basket-btn');
   var basketClose = document.querySelector('.basket__close');
+  var btn = document.querySelector('.js-btn');
+  var block = document.querySelector('.js-block');
   basket.addEventListener('click', function (evt) {
     if (evt.target === this) {
       basket.classList.remove('active');
@@ -8808,5 +8818,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   });
   basketButton.addEventListener('click', function () {
     basket.classList.add('active');
+    btn.classList.remove('js-btn-active');
+    block.classList.add('js-block-inactive');
   });
 })();
