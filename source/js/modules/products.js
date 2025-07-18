@@ -7,7 +7,12 @@
   // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
   // Например, новинки + сортировка по убыванию цены:
   // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(products => {
     console.log(products); // Выведет массив товаров
     const container = document.getElementById('products');
@@ -28,5 +33,10 @@
         </div>
       `;
     });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+    const container = document.getElementById('products');
+    container.innerHTML = `<p class="error-message">Не удалось загрузить данные. Пожалуйста, попробуйте позже.</p>`;
   });
 })();
