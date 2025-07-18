@@ -1,42 +1,70 @@
 (function () {
-  fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors')
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
-  // сначала дешевые
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
-  // сначала дорогие
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
-  // Например, новинки + сортировка по убыванию цены:
-  // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(products => {
-    console.log(products); // Выведет массив товаров
-    const container = document.getElementById('products');
-    const catalogBlockCaption = document.querySelector('.catalog-block__caption span');
-    catalogBlockCaption.textContent = products.length;
+  const startUrl = 'https://6879163463f24f1fdca0cc4f.mockapi.io/colors';
+  const checkbox = document.querySelectorAll('.filter input');
 
-    products.forEach(product => {
-      container.innerHTML += `
-        <div class="product__card" id="${product.id}">
-          <div class="product__img">
-            <img src="${product.image}" alt="${product.name}">
+  function getRendering (url) {
+    fetch(url)
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true')
+    // сначала дешевые
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=asc')
+    // сначала дорогие
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?sortBy=price&order=desc')
+    // Например, новинки + сортировка по убыванию цены:
+    // fetch('https://6879163463f24f1fdca0cc4f.mockapi.io/colors?new=true&sortBy=price&order=desc')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(products => {
+      console.log(products); // Выведет массив товаров
+      const container = document.getElementById('products');
+      const catalogBlockCaption = document.querySelector('.catalog-block__caption span');
+      catalogBlockCaption.textContent = products.length;
+      container.innerHTML = '';
+
+      products.forEach(product => {
+        container.innerHTML += `
+          <div class="product__card" id="${product.id}">
+            <div class="product__img">
+              <img src="${product.image}" alt="${product.name}">
+            </div>
+            <a href="/" class="product__name">${product.name}</a>
+            <div class="product__price-row">
+              <p>${product.price} ₽</p>
+              <button type="button">+</button>
+            </div>
           </div>
-          <a href="/" class="product__name">${product.name}</a>
-          <div class="product__price-row">
-            <p>${product.price} ₽</p>
-            <button type="button">+</button>
-          </div>
-        </div>
-      `;
+        `;
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      const container = document.getElementById('products');
+      container.innerHTML = `<p class="error-message">Не удалось загрузить данные. Пожалуйста, попробуйте позже.</p>`;
     });
+  }
+
+  getRendering(startUrl);
+
+  function buildCheckedUrl(url) {
+    const checkboxes = document.querySelectorAll('.filter input:checked');
+    const params = [];
+
+    checkboxes.forEach(item => {
+      params.push(`${item.name}=true`);
+    });
+
+    return params.length ? `${url}?${params.join('&')}` : url;
+  }
+
+  checkbox.forEach((item) => {
+    item.addEventListener('change', () => {
+      console.log(item.name);
+      getRendering(buildCheckedUrl(startUrl));
+    })
   })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-    const container = document.getElementById('products');
-    container.innerHTML = `<p class="error-message">Не удалось загрузить данные. Пожалуйста, попробуйте позже.</p>`;
-  });
+
+
 })();
